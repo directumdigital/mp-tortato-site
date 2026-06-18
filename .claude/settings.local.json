@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm i *)",
+      "Bash(claude mcp *)",
+      "Bash(npx shadcn@latest *)",
+      "Bash(npm --version)",
+      "Bash(py --version)",
+      "Bash(npx --yes create-next-app@14 mp-tortato-site --typescript --tailwind --app --src-dir --import-alias \"@/*\" --eslint --no-turbo --use-npm)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl *)",
+      "PowerShell($urls = @\\('http://localhost:3000','http://localhost:3000/empresa','http://localhost:3000/obras','http://localhost:3000/contato'\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 10; Write-Output \"$u $\\($r.StatusCode\\)\" } catch { Write-Output \"$u ERROR\" } })",
+      "PowerShell($urls = @\\('http://localhost:3000','http://localhost:3000/empresa','http://localhost:3000/obras','http://localhost:3000/contato'\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 15; Write-Output \"$u $\\($r.StatusCode\\)\" } catch { Write-Output \"$u ERROR $\\($_.Exception.Message\\)\" } })",
+      "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" })",
+      "PowerShell(New-Item *)",
+      "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/empresa' -UseBasicParsing -TimeoutSec 20\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" }; try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/sequence/frame_001.jpg' -UseBasicParsing -TimeoutSec 10\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" }; try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/sequence/frame_110.jpg' -UseBasicParsing -TimeoutSec 10\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" })",
+      "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/empresa' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR\" })",
+      "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" }; try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/clientes/Klabin.svg' -UseBasicParsing -TimeoutSec 10\\).StatusCode } catch { \"ERR\" })",
+      "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR\" })"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "shadcn"
+  ]
+}
