@@ -3,7 +3,6 @@ import { Epilogue, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Preloader from "@/components/Preloader";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
@@ -46,7 +45,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${epilogue.variable} ${mono.variable} font-sans antialiased bg-white overflow-x-hidden`}>
-        <Preloader />
         <Navbar />
         {children}
         <Footer />
