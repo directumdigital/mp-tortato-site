@@ -18,7 +18,9 @@
       "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/empresa' -UseBasicParsing -TimeoutSec 20\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" }; try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/sequence/frame_001.jpg' -UseBasicParsing -TimeoutSec 10\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" }; try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/sequence/frame_110.jpg' -UseBasicParsing -TimeoutSec 10\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" })",
       "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/empresa' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR\" })",
       "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR $\\($_.Exception.Message\\)\" }; try { \\(Invoke-WebRequest -Uri 'http://localhost:3000/clientes/Klabin.svg' -UseBasicParsing -TimeoutSec 10\\).StatusCode } catch { \"ERR\" })",
-      "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR\" })"
+      "PowerShell(try { \\(Invoke-WebRequest -Uri 'http://localhost:3000' -UseBasicParsing -TimeoutSec 15\\).StatusCode } catch { \"ERR\" })",
+      "PowerShell(Copy-Item *)",
+      "Bash(npx next *)"
     ]
   },
   "enableAllProjectMcpServers": true,
