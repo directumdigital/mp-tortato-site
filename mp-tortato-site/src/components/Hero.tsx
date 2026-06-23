@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
-import { siteData } from "@/lib/site-data";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -38,7 +37,7 @@ export default function Hero() {
           transition={{ duration: 0.9, ease, delay: 0.25 }}
           className="h1-display mt-8 max-w-4xl text-white"
         >
-          <span className="text-white/65">Metalúrgica de base.</span> Aço transformado em solução industrial.
+          Transformando aço em soluções para o futuro
         </motion.h1>
 
         <motion.p
@@ -47,7 +46,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease, delay: 0.45 }}
           className="mt-8 max-w-xl text-[17px] leading-relaxed text-white/80 md:text-[19px]"
         >
-          {siteData.brand.description}
+          Projetamos, fabricamos, e entregamos soluções em estruturas nos mais variados nichos da indústria
         </motion.p>
 
         <motion.div

@@ -2,9 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { servicos, segmentos, siteData } from "@/lib/site-data";
 
-const empresaLinks = [
-  { href: "/empresa", label: "Sobre" },
+const navLinks = [
+  { href: "/servicos", label: "Serviços" },
+  { href: "/segmentos", label: "Segmentos" },
   { href: "/obras", label: "Obras" },
+  { href: "/empresa", label: "Empresa" },
+  { href: "/contato", label: "Contato" },
 ];
 
 export default function Footer() {
@@ -33,38 +36,34 @@ export default function Footer() {
 
         <FooterColumn label="Serviços">
           {servicos.map((s) => (
-            <FooterLink key={s.slug} href={`/servicos/${s.slug}`}>
+            <li key={s.title} className="text-[13px] text-white/85">
               {s.title}
-            </FooterLink>
+            </li>
           ))}
-          <FooterLink href="/servicos" muted>
-            Ver todos →
-          </FooterLink>
         </FooterColumn>
 
         <FooterColumn label="Segmentos">
           {segmentos.map((s) => (
-            <FooterLink key={s.slug} href={`/segmentos/${s.slug}`}>
+            <li key={s.title} className="text-[13px] text-white/85">
               {s.title}
-            </FooterLink>
+            </li>
           ))}
-          <FooterLink href="/segmentos" muted>
-            Ver todos →
-          </FooterLink>
         </FooterColumn>
 
         <FooterColumn label="Contato">
-          {empresaLinks.map((e) => (
-            <FooterLink key={e.href} href={e.href}>
-              {e.label}
-            </FooterLink>
-          ))}
+          {navLinks
+            .filter((l) => l.href !== "/contato")
+            .map((l) => (
+              <FooterLink key={l.href} href={l.href}>
+                {l.label}
+              </FooterLink>
+            ))}
           <FooterLink href="/contato">Solicitar orçamento</FooterLink>
           <li className="pt-3 text-[13px] text-white/70">
             {siteData.contact.whatsappPrimaryLabel}
           </li>
           <li className="text-[13px] text-white/70">
-            {siteData.contact.whatsappSecondaryLabel}
+            {siteData.contact.emails[0]}
           </li>
         </FooterColumn>
       </div>

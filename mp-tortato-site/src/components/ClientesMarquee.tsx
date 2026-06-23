@@ -4,26 +4,36 @@ import { motion } from "framer-motion";
 
 type Logo = { src: string; alt: string };
 
+const CDN = "https://s3.directum.com.br/mptortato";
+
 const logos: Logo[] = [
-  { src: "/clientes/andritz-logo-icon.webp", alt: "Andritz" },
-  { src: "/clientes/Klabin.svg", alt: "Klabin" },
-  { src: "/clientes/Electrolux-Logo.png", alt: "Electrolux" },
-  { src: "/clientes/logo_continental.svg", alt: "Continental" },
-  { src: "/clientes/logo-zaffari.svg", alt: "Zaffari" },
-  { src: "/clientes/Envases_Logo.svg.png", alt: "Envases" },
-  { src: "/clientes/grupo_potencial_logo.webp", alt: "Grupo Potencial" },
-  { src: "/clientes/elco_engenharia_logo.png", alt: "Elco Engenharia" },
-  { src: "/clientes/LOGO-mamute.svg", alt: "Mamute" },
-  { src: "/clientes/logo-otz.png", alt: "OTZ" },
-  { src: "/clientes/logork.png", alt: "Rolkran" },
-  { src: "/clientes/TEQUALY-LOGO.png", alt: "Tequaly" },
+  { src: `${CDN}/Electrolux-Logo.png`, alt: "Electrolux" },
+  { src: `${CDN}/andritz-logo-icon.webp`, alt: "Andritz" },
+  { src: `${CDN}/elco_engenharia_logo.jpeg`, alt: "Elco Engenharia" },
+  { src: `${CDN}/Klabin.svg`, alt: "Klabin Ortigueira" },
+  { src: `${CDN}/grupo_potencial_logo.jpeg`, alt: "Grupo Potencial" },
+  { src: `${CDN}/logo_continental.svg`, alt: "Continental Pneus" },
+  { src: `${CDN}/Nissin_Logo.svg.png`, alt: "Nissin Foods" },
+  { src: `${CDN}/Schreiber-Logo.png`, alt: "Schreiber Foods" },
+  { src: `${CDN}/Komatsu-logo.png`, alt: "Komatsu" },
+  { src: `${CDN}/Sumitomo-logo.jpg`, alt: "Sumitomo Rubber do Brasil" },
+  { src: `${CDN}/logo-zaffari.svg`, alt: "Zaffari & Bourbon" },
+  { src: `${CDN}/Envases_Logo.svg.png`, alt: "Envases (CristalPet)" },
+  { src: `${CDN}/logork.png`, alt: "Rolkran" },
+  { src: `${CDN}/neodent-logo.png`, alt: "Neodent" },
+  { src: `${CDN}/TEQUALY-LOGO.png`, alt: "Tequaly" },
+  { src: `${CDN}/LOGO-mamute.jpeg`, alt: "Mamute" },
+  { src: `${CDN}/logo-otz.png.jpeg`, alt: "OTZ" },
 ];
 
-export default function ClientesMarquee() {
-  const loop = [...logos, ...logos];
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
 
+export default function ClientesMarquee() {
   return (
-    <section className="overflow-hidden bg-white py-20 md:py-24">
+    <section className="bg-white py-20 md:py-24">
       <div className="container-px">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,39 +44,38 @@ export default function ClientesMarquee() {
         >
           <span className="eyebrow">Quem confia</span>
           <h2 className="mt-6 text-[28px] font-extrabold leading-[1.1] tracking-tight text-brand md:text-[40px]">
-            <span className="text-slate-400">Indústrias que escolhem </span>
+            <span className="text-slate-400">Clientes que confiam na </span>
             MP Tortato.
           </h2>
         </motion.div>
-      </div>
 
-      <div
-        className="relative mt-14 [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]"
-        aria-label="Clientes da MP Tortato"
-      >
-        <motion.div
-          className="flex w-max items-center gap-6 md:gap-10"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 40,
-            ease: "linear",
-            repeat: Infinity,
+        <motion.ul
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
           }}
+          aria-label="Clientes da MP Tortato"
+          className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mt-16 md:grid-cols-4 md:gap-6"
         >
-          {loop.map((logo, i) => (
-            <div
-              key={`${logo.alt}-${i}`}
-              className="group flex h-16 w-[140px] shrink-0 items-center justify-center sm:h-20 sm:w-[180px] md:h-24 md:w-[220px]"
+          {logos.map((logo) => (
+            <motion.li
+              key={logo.alt}
+              variants={fadeUp}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="group flex h-28 items-center justify-center rounded-xl2 border border-slate-100 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-200 hover:shadow-[0_18px_40px_-20px_rgba(10,15,61,0.18)] md:h-32"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="max-h-10 max-w-full object-contain opacity-60 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 sm:max-h-14 md:max-h-16"
+                loading="lazy"
+                className="max-h-12 max-w-[80%] object-contain opacity-70 grayscale transition-all duration-500 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0 md:max-h-14"
               />
-            </div>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ul>
       </div>
     </section>
   );

@@ -9,13 +9,15 @@ import { ArrowDown, ChevronRight } from "lucide-react";
 const TITLE_LINE_1 = "Da garagem ao aço";
 const TITLE_LINE_2 = "em escala industrial.";
 
+const CDN = "https://s3.directum.com.br/mptortato";
+
 const SLIDES = [
-  { src: "/empresa/fachada.jpg", alt: "Fachada da MP Tortato" },
-  { src: "/empresa/barracao-1.jpg", alt: "Barracão MP Tortato" },
-  { src: "/empresa/barracao-2.jpg", alt: "Parque fabril MP Tortato" },
-  { src: "/empresa/barracao-3.jpg", alt: "Estruturas em produção" },
-  { src: "/empresa/maquinario-solda-1.jpg", alt: "Maquinário de solda" },
-  { src: "/empresa/maquinario-solda-2.jpg", alt: "Maquinário industrial" },
+  { src: `${CDN}/fachada.jpg`, alt: "Fachada da MP Tortato" },
+  { src: `${CDN}/barracao-1.jpg`, alt: "Barracão MP Tortato" },
+  { src: `${CDN}/barracao-2.jpg`, alt: "Parque fabril MP Tortato" },
+  { src: `${CDN}/barracao-3.jpg`, alt: "Estruturas em produção" },
+  { src: `${CDN}/maquinario-solda-1.jpg`, alt: "Maquinário de solda" },
+  { src: `${CDN}/maquinario-solda-2.jpg`, alt: "Maquinário industrial" },
 ];
 
 const SLIDE_DURATION = 4500;

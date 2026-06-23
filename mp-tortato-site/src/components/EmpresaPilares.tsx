@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import {
   Lightbulb,
   ShieldCheck,
-  Users,
-  Cpu,
+  Factory,
+  HardHat,
   Clock,
   Handshake,
+  Compass,
   type LucideIcon,
 } from "lucide-react";
 import GridPattern from "./GridPattern";
@@ -15,12 +16,12 @@ import Spotlight from "./Spotlight";
 import { features } from "@/lib/site-data";
 
 const icons: Record<string, LucideIcon> = {
-  "Engenharia integrada": Lightbulb,
-  "Aço com rastreabilidade": ShieldCheck,
-  "Parque fabril próprio": Cpu,
-  "Equipe técnica qualificada": Users,
-  "Prazo acordado, prazo cumprido": Clock,
-  "Atendimento com os sócios": Handshake,
+  compass: Compass,
+  shieldCheck: ShieldCheck,
+  factory: Factory,
+  hardHat: HardHat,
+  clock: Clock,
+  handshake: Handshake,
 };
 
 export default function EmpresaPilares() {
@@ -56,7 +57,7 @@ export default function EmpresaPilares() {
           className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
         >
           {features.map((f, i) => {
-            const Icon = icons[f.title] ?? Lightbulb;
+            const Icon = icons[f.icon] ?? Lightbulb;
             return (
               <motion.div
                 key={f.title}

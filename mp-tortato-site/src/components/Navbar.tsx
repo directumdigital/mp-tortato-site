@@ -5,35 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { servicos, segmentos } from "@/lib/site-data";
 
 type NavItem = {
   href: string;
   label: string;
-  children?: { href: string; label: string; sub?: string }[];
 };
 
 const NAV: NavItem[] = [
-  {
-    href: "/servicos",
-    label: "Serviços",
-    children: servicos.map((s) => ({
-      href: `/servicos/${s.slug}`,
-      label: s.title,
-      sub: s.eyebrow,
-    })),
-  },
-  {
-    href: "/segmentos",
-    label: "Segmentos",
-    children: segmentos.map((s) => ({
-      href: `/segmentos/${s.slug}`,
-      label: s.title,
-      sub: s.eyebrow,
-    })),
-  },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/segmentos", label: "Segmentos" },
   { href: "/obras", label: "Obras" },
   { href: "/empresa", label: "Empresa" },
   { href: "/contato", label: "Contato" },
@@ -44,8 +26,6 @@ export default function Navbar() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [openMobileChild, setOpenMobileChild] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -91,75 +71,25 @@ export default function Navbar() {
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV.map((item) => {
             const active = pathname.startsWith(item.href);
-            const hasChildren = !!item.children?.length;
             return (
-              <div
+              <Link
                 key={item.href}
-                className="relative"
-                onMouseEnter={() => hasChildren && setOpenDropdown(item.href)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                href={item.href}
+                className={cn(
+                  "relative inline-flex items-center text-[14px] font-medium tracking-wide transition-colors",
+                  solid
+                    ? active
+                      ? "text-brand"
+                      : "text-ink hover:text-brand-mid"
+                    : active
+                      ? "text-white"
+                      : "text-white/85 hover:text-white",
+                  active &&
+                    "after:absolute after:-bottom-2 after:left-0 after:right-0 after:mx-auto after:h-[2px] after:w-6 after:rounded-full after:bg-brand-mid"
+                )}
               >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "relative inline-flex items-center gap-1 text-[14px] font-medium tracking-wide transition-colors",
-                    solid
-                      ? active
-                        ? "text-brand"
-                        : "text-ink hover:text-brand-mid"
-                      : active
-                        ? "text-white"
-                        : "text-white/85 hover:text-white",
-                    active &&
-                      "after:absolute after:-bottom-2 after:left-0 after:right-0 after:mx-auto after:h-[2px] after:w-6 after:rounded-full after:bg-brand-mid"
-                  )}
-                >
-                  {item.label}
-                  {hasChildren && (
-                    <ChevronDown size={14} className="opacity-70" />
-                  )}
-                </Link>
-
-                <AnimatePresence>
-                  {hasChildren && openDropdown === item.href && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute left-1/2 top-full z-50 mt-3 w-[320px] -translate-x-1/2 rounded-xl2 border border-black/[0.06] bg-white p-3 shadow-[0_24px_60px_-24px_rgba(10,15,61,0.35)]"
-                    >
-                      <ul className="space-y-1">
-                        {item.children!.map((c) => (
-                          <li key={c.href}>
-                            <Link
-                              href={c.href}
-                              className="group block rounded-lg px-3 py-2.5 transition-colors hover:bg-brand-ice"
-                            >
-                              <div className="text-[14px] font-semibold text-brand">
-                                {c.label}
-                              </div>
-                              {c.sub && (
-                                <div className="mt-0.5 text-[12px] leading-snug text-slate-500">
-                                  {c.sub}
-                                </div>
-                              )}
-                            </Link>
-                          </li>
-                        ))}
-                        <li className="mt-2 border-t border-black/[0.06] pt-2">
-                          <Link
-                            href={item.href}
-                            className="block rounded-lg px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-brand-mid transition-colors hover:bg-brand-ice"
-                          >
-                            Ver todos →
-                          </Link>
-                        </li>
-                      </ul>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                {item.label}
+              </Link>
             );
           })}
 
@@ -223,70 +153,24 @@ export default function Navbar() {
               }}
               className="container-px mt-6 flex flex-col gap-1 pb-12"
             >
-              {NAV.map((item) => {
-                const hasChildren = !!item.children?.length;
-                const isOpen = openMobileChild === item.href;
-                return (
-                  <motion.div
-                    key={item.href}
-                    variants={{
-                      hidden: { opacity: 0, x: -16 },
-                      show: { opacity: 1, x: 0 },
-                    }}
-                    className="border-b border-white/10"
+              {NAV.map((item) => (
+                <motion.div
+                  key={item.href}
+                  variants={{
+                    hidden: { opacity: 0, x: -16 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                  className="border-b border-white/10"
+                >
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-5 text-2xl font-semibold text-white"
                   >
-                    <div className="flex items-center justify-between">
-                      <Link
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className="block flex-1 py-5 text-2xl font-semibold text-white"
-                      >
-                        {item.label}
-                      </Link>
-                      {hasChildren && (
-                        <button
-                          aria-label={`Abrir ${item.label}`}
-                          onClick={() =>
-                            setOpenMobileChild(isOpen ? null : item.href)
-                          }
-                          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                        >
-                          <ChevronDown
-                            size={18}
-                            className={cn(
-                              "transition-transform duration-300",
-                              isOpen && "rotate-180"
-                            )}
-                          />
-                        </button>
-                      )}
-                    </div>
-                    <AnimatePresence>
-                      {hasChildren && isOpen && (
-                        <motion.ul
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="overflow-hidden"
-                        >
-                          {item.children!.map((c) => (
-                            <li key={c.href}>
-                              <Link
-                                href={c.href}
-                                onClick={() => setOpen(false)}
-                                className="block py-3 pl-4 text-base text-white/80 hover:text-white"
-                              >
-                                {c.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </motion.ul>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 12 },

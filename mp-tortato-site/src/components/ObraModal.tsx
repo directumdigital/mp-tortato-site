@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, MapPin, Calendar, Building2, type LucideIcon } from "lucide-react";
 import type { Obra } from "@/lib/site-data";
 
 export default function ObraModal({
@@ -37,7 +37,7 @@ export default function ObraModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-brand/70 p-4 backdrop-blur-md md:p-8"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-brand-deep/70 p-4 backdrop-blur-md md:p-8"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -70,27 +70,61 @@ export default function ObraModal({
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-brand/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">
-                    Obra
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/95 via-brand/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur">
+                    {obra.segmento}
                   </span>
                   <h3
                     id="obra-title"
-                    className="mt-2 text-4xl font-bold text-white md:text-5xl"
+                    className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-white md:text-5xl"
                   >
                     {obra.cliente}
                   </h3>
+                  <p className="mt-2 max-w-2xl text-[15px] text-white/80 md:text-[17px]">
+                    {obra.titulo}
+                  </p>
                 </div>
               </div>
 
+              <div className="grid grid-cols-1 gap-px bg-slate-100 md:grid-cols-3">
+                <MetaItem icon={Building2} label="Segmento" value={obra.segmento} />
+                <MetaItem icon={MapPin} label="Local" value={obra.local} />
+                <MetaItem icon={Calendar} label="Ano" value={obra.ano} />
+              </div>
+
               <div className="p-6 md:p-10">
-                <p className="max-w-2xl text-base leading-relaxed text-slate-700 md:text-[17px]">
-                  {obra.descricao}
-                </p>
+                <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
+                  <div className="md:col-span-2">
+                    <span className="mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-brand-mid">
+                      Sobre o projeto
+                    </span>
+                    <p className="mt-3 text-base leading-relaxed text-slate-700 md:text-[17px]">
+                      {obra.descricao}
+                    </p>
+                  </div>
+
+                  <div>
+                    <span className="mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-brand-mid">
+                      Escopo
+                    </span>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {obra.escopo.map((e) => (
+                        <li
+                          key={e}
+                          className="rounded-full border border-brand/15 bg-brand-ice px-3 py-1.5 text-[12.5px] font-semibold text-brand"
+                        >
+                          {e}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
 
                 <div className="mt-10">
-                  <span className="eyebrow">Galeria</span>
+                  <span className="mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-brand-mid">
+                    Galeria
+                  </span>
                   <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
                     {obra.gallery.slice(1).map((src, i) => (
                       <div
@@ -115,5 +149,29 @@ export default function ObraModal({
         </motion.div>
       )}
     </AnimatePresence>
+  );
+}
+
+function MetaItem({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="flex items-center gap-3 bg-white px-6 py-4">
+      <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-ice text-brand">
+        <Icon size={16} strokeWidth={1.8} />
+      </span>
+      <div className="min-w-0">
+        <div className="mono text-[10px] font-medium uppercase tracking-[0.2em] text-brand-mid">
+          {label}
+        </div>
+        <div className="mt-0.5 truncate text-[14px] font-semibold text-brand">{value}</div>
+      </div>
+    </div>
   );
 }

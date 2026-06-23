@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, MessageCircle, Send, type LucideIcon } from "lucide-react";
+import { Mail, MapPin, Phone, Send, type LucideIcon } from "lucide-react";
 import { siteData } from "@/lib/site-data";
 
 const fadeUp = {
@@ -67,8 +67,7 @@ export default function Contato() {
               transition={{ duration: 0.7 }}
               className="mt-10 space-y-5"
             >
-              <ContactItem icon={Phone} label="WhatsApp" value={siteData.contact.whatsappPrimaryLabel} />
-              <ContactItem icon={MessageCircle} label="Comercial" value={siteData.contact.whatsappSecondaryLabel} />
+              <ContactItem icon={Phone} label="Contato" value={siteData.contact.whatsappPrimaryLabel} />
               <ContactItem icon={Mail} label="E-mail" value={siteData.contact.emails.join(" / ")} />
               <ContactItem
                 icon={MapPin}
