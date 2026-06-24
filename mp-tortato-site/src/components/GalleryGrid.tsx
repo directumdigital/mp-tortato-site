@@ -82,7 +82,6 @@ export default function GalleryGrid({
       >
         {items.map((item, i) => {
           const Icon = iconMap[item.icon] ?? Factory;
-          const index = (i + 1).toString().padStart(2, "0");
           const colSpan = BENTO_COL_SPANS[i] ?? "lg:col-span-2";
 
           return (
