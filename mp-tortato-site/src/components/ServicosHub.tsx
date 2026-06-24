@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion";
 import GalleryGrid from "./GalleryGrid";
+import GridPattern from "./GridPattern";
 import { servicos } from "@/lib/site-data";
 
 export default function ServicosHub() {
   return (
-    <section className="relative bg-gray-50 py-24 md:py-32">
+    <section className="relative overflow-hidden bg-brand-ice py-24 md:py-32">
+      <GridPattern tone="light" size={56} />
       <div className="container-px">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

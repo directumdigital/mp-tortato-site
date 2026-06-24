@@ -115,7 +115,14 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-px flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/60 md:flex-row">
           <span>© {new Date().getFullYear()} MP Tortato. Todos os direitos reservados.</span>
-          <span>{siteData.contact.site}</span>
+          <a
+            href="https://directum.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-white/90"
+          >
+            Desenvolvido por Directum
+          </a>
         </div>
       </div>
     </footer>

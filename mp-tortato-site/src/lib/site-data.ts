@@ -47,7 +47,7 @@ export const siteData = {
   obras: [
     {
       slug: "andritz",
-      cliente: "HHQ-Chipper - Andritz",
+      cliente: "Andritz - HHQ-Chipper",
       segmento: "Celulose",
       ano: "2025",
       local: "Curitiba/PR",
@@ -84,7 +84,7 @@ export const siteData = {
     },
     {
       slug: "electrolux",
-      cliente: "Electrolux - Group Gralha Azul",
+      cliente: "Electrolux Group - Gralha Azul",
       segmento: "Eletromecânica",
       ano: "2025",
       local: "São José dos Pinhas - PR",
@@ -98,6 +98,24 @@ export const siteData = {
         "https://s3.directum.com.br/mptortato/electrolux/electrolux/capa.webp",
         "https://s3.directum.com.br/mptortato/electrolux/electrolux/electrolux1.jpg",
         "https://s3.directum.com.br/mptortato/electrolux/electrolux/electrolux2.webp",
+      ],
+    },
+    {
+      slug: "grupo-potencial",
+      cliente: "Potencial",
+      segmento: "Óleo e Gás",
+      ano: "2025",
+      local: "Lapa/PR",
+      escopo: ["Pipe Racks", "Plataformas"],
+      titulo: "Estrutura pipe-rack externa",
+      descricao:
+        "Em 2025 a MPTORTATO participou da fabricação de Pipe-racks externos da nova fabrica da potencial. Com um investimento de R$ 6 bilhões até 2030, o Grupo Potencial está ampliando seu complexo industrial na Lapa (PR), consolidando-o como um dos maiores polos de agroenergia do mundo. A expansão inclui novas unidades de esmagamento de soja, produção de biodiesel, etanol de milho, glicerina refinada, biogás e infraestrutura logística integrada. A expectativa é transformar a unidade na maior planta única de biodiesel do mundo, com capacidade de produzir até 1,7 bilhão de litros de biodiesel por ano e gerar um forte impacto econômico para a região.",
+      thumb:
+        "https://s3.directum.com.br/mptortato/potencial/capa.jpg",
+      gallery: [
+        "https://s3.directum.com.br/mptortato/potencial/capa.jpg",
+        "https://s3.directum.com.br/mptortato/potencial/potencial1.jpg",
+        "https://s3.directum.com.br/mptortato/potencial/potencial2.jpg",
       ],
     },
     {
@@ -118,21 +136,219 @@ export const siteData = {
       ],
     },
     {
-      slug: "grupo-potencial",
-      cliente: "Grupo Potencial",
-      segmento: "Óleo e Gás",
-      ano: "2023",
-      local: "Lapa/PR",
-      escopo: ["Pipe Racks", "Plataformas"],
-      titulo: "Estrutura para planta industrial",
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
       descricao:
-        "Estrutura fabricada com solda certificada e pintura industrial — entregue alinhada, instalada e operando.",
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
       thumb:
-        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1400&q=80",
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
       gallery: [
-        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581092916357-5183a3e5d1bf?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      slug: "elco",
+      cliente: "Elco Engenharia",
+      segmento: "Indústria da Reciclagem",
+      ano: "2022",
+      local: "Curitiba/PR",
+      escopo: ["Equipamentos", "Suportação"],
+      titulo: "Equipamentos para planta de reciclagem",
+      descricao:
+        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
+      thumb:
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
+      gallery: [
+        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
+        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
       ],
     },
     {
@@ -229,6 +445,21 @@ export const segmentos = [
     title: "Indústria da Reciclagem",
     short: "Estruturas e equipamentos para plantas de reciclagem.",
     icon: "recycle",
+  },
+  {
+    title: "Mineração",
+    short: "Estruturas e equipamentos para plantas e operações de mineração.",
+    icon: "mountain",
+  },
+  {
+    title: "Eletromecânica",
+    short: "Estruturas e suportação para instalações eletromecânicas.",
+    icon: "zap",
+  },
+  {
+    title: "Portuário",
+    short: "Estruturas metálicas e equipamentos para terminais e operações portuárias.",
+    icon: "anchor",
   },
 ];
 

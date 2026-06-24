@@ -17,6 +17,9 @@ import {
   Recycle,
   Factory,
   Gauge,
+  Mountain,
+  Zap,
+  Anchor,
   type LucideIcon,
 } from "lucide-react";
 import Spotlight from "./Spotlight";
@@ -43,6 +46,9 @@ const iconMap: Record<string, LucideIcon> = {
   utensils: UtensilsCrossed,
   recycle: Recycle,
   gauge: Gauge,
+  mountain: Mountain,
+  zap: Zap,
+  anchor: Anchor,
 };
 
 const fadeUp = {
@@ -65,9 +71,11 @@ const BENTO_COL_SPANS = [
 export default function GalleryGrid({
   items,
   bento = false,
+  cols = 3,
 }: {
   items: GalleryItem[];
   bento?: boolean;
+  cols?: 2 | 3;
 }) {
   const total = items.length.toString().padStart(2, "0");
 
@@ -83,28 +91,41 @@ export default function GalleryGrid({
         {items.map((item, i) => {
           const Icon = iconMap[item.icon] ?? Factory;
           const colSpan = BENTO_COL_SPANS[i] ?? "lg:col-span-2";
+          const index = (i + 1).toString().padStart(2, "0");
 
           return (
             <motion.li
               key={item.title}
               variants={fadeUp}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className={`relative flex flex-col bg-white border border-gray-200 rounded-[18px] min-h-[200px] p-7 md:p-8 ${colSpan}`}
+              className={`relative overflow-hidden rounded-[18px] border border-gray-200 bg-white min-h-[200px] ${colSpan}`}
             >
-              <div>
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white text-slate-400">
-                  <Icon size={20} strokeWidth={1.5} />
-                </span>
-              </div>
+              <Spotlight tone="light" className="h-full">
+                <GridPattern tone="light" size={28} className="opacity-[0.35]" />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute right-0 top-0 h-12 w-12 origin-top-right rotate-45 bg-brand/[0.05] transition-colors duration-500 group-hover/spot:bg-brand/[0.12]"
+                />
+                <div className="relative flex h-full flex-col p-7 md:p-8">
+                  <div className="flex items-start justify-between">
+                    <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-brand/15 bg-white text-brand shadow-[inset_0_0_0_1px_rgba(255,255,255,0.6)] transition-all duration-500 group-hover/spot:border-brand/40 group-hover/spot:bg-brand group-hover/spot:text-white">
+                      <Icon size={20} strokeWidth={1.5} />
+                    </span>
+                    <span className="mono text-[10px] font-medium tracking-[0.18em] text-slate-400">
+                      {index} / {total}
+                    </span>
+                  </div>
 
-              <div className="mt-auto pt-8">
-                <h3 className="text-[20px] font-extrabold leading-[1.15] tracking-tight text-slate-900 md:text-[22px]">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-brand-mid">
-                  {item.short}
-                </p>
-              </div>
+                  <div className="mt-auto pt-8">
+                    <h3 className="text-[20px] font-extrabold leading-[1.15] tracking-tight text-slate-900 md:text-[22px]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-brand-mid">
+                      {item.short}
+                    </p>
+                  </div>
+                </div>
+              </Spotlight>
             </motion.li>
           );
         })}
@@ -112,7 +133,8 @@ export default function GalleryGrid({
     );
   }
 
-  const lastAloneLg = items.length % 3 === 1;
+  const lastAloneLg = items.length % cols === 1;
+  const lgCols = cols === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3";
 
   return (
     <motion.ul
@@ -120,7 +142,7 @@ export default function GalleryGrid({
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
       variants={{ show: { transition: { staggerChildren: 0.06 } } }}
-      className="grid grid-cols-1 gap-px overflow-hidden rounded-card bg-black/[0.06] sm:grid-cols-2 lg:grid-cols-3"
+      className={`grid grid-cols-1 gap-3 sm:grid-cols-2 ${lgCols}`}
     >
       {items.map((item, i) => {
         const Icon = iconMap[item.icon] ?? Factory;
@@ -132,7 +154,7 @@ export default function GalleryGrid({
             key={item.title}
             variants={fadeUp}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className={`relative isolate bg-white${isLast && lastAloneLg ? " lg:col-start-2" : ""}`}
+            className={`relative isolate overflow-hidden rounded-[18px] border border-gray-200 bg-white${isLast && lastAloneLg ? " lg:col-start-2" : ""}`}
           >
             <Spotlight tone="light" className="h-full">
               <GridPattern tone="light" size={28} className="opacity-[0.35]" />

@@ -36,7 +36,7 @@ export default function Obras() {
           </p>
         </motion.div>
 
-        <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-card bg-black/[0.06] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {siteData.obras.map((obra, i) => (
             <ObraCard
               key={obra.slug}
@@ -70,7 +70,7 @@ function ObraCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative block aspect-[4/3] w-full overflow-hidden bg-brand text-left focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-mid"
+      className="group relative block aspect-[16/9] w-full overflow-hidden rounded-2xl bg-brand text-left focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-mid"
     >
       <Image
         src={obra.thumb}
