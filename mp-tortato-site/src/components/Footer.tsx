@@ -50,7 +50,7 @@ export default function Footer() {
             className="h-12 w-auto object-contain"
           />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
-            {siteData.brand.description}
+            {siteData.brand.tagline}
           </p>
           <address className="mt-6 not-italic text-sm leading-relaxed text-white/85">
             {siteData.contact.address.street}

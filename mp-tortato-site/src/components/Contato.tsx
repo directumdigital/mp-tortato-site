@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send } from "lucide-react";
 
-type IconComponent = React.ComponentType<{ size?: number; strokeWidth?: number }>;
+type IconComponent = React.ElementType;
 
 function WhatsAppIcon({ size = 18 }: { size?: number; strokeWidth?: number }) {
   return (
