@@ -13,8 +13,8 @@ export default function ObrasPage() {
     <main className="bg-white">
       <PageHeader
         eyebrow="Obras"
-        title="Aço transformado, projeto a projeto."
-        description="Estruturas, peças e conjuntos metálicos entregues para indústria, construção, agronegócio e fabricantes de máquinas."
+        title="Experiencia, tecnologia & inovação."
+        description="Atuação em todo sul do Brasil."
       />
       <Obras />
     </main>

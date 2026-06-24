@@ -28,11 +28,11 @@ export default function Obras() {
               </span>
             </div>
             <h2 className="h2-display mt-5 text-brand">
-              Aço entregue, instalado e operando.
+              Clientes que escolheram nosso serviço.
             </h2>
           </div>
           <p className="max-w-md text-[15px] leading-relaxed text-slate-600">
-            Projetos executados com engenharia integrada, fabricação certificada e implantação coordenada.
+            Desenvolvendo projetos metálicos para todos os segmentos.
           </p>
         </motion.div>
 
