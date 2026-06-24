@@ -94,31 +94,13 @@ export default function ObraModal({
               </div>
 
               <div className="p-6 md:p-10">
-                <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
-                  <div className="md:col-span-2">
-                    <span className="mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-brand-mid">
-                      Sobre o projeto
-                    </span>
-                    <p className="mt-3 text-base leading-relaxed text-slate-700 md:text-[17px]">
-                      {obra.descricao}
-                    </p>
-                  </div>
-
-                  <div>
-                    <span className="mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-brand-mid">
-                      Escopo
-                    </span>
-                    <ul className="mt-3 flex flex-wrap gap-2">
-                      {obra.escopo.map((e) => (
-                        <li
-                          key={e}
-                          className="rounded-full border border-brand/15 bg-brand-ice px-3 py-1.5 text-[12.5px] font-semibold text-brand"
-                        >
-                          {e}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div>
+                  <span className="mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-brand-mid">
+                    Sobre o projeto
+                  </span>
+                  <p className="mt-3 text-base leading-relaxed text-slate-700 md:text-[17px]">
+                    {obra.descricao}
+                  </p>
                 </div>
 
                 <div className="mt-10">

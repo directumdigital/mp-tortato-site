@@ -40,11 +40,12 @@ export default function HomeCta() {
           <div className="lg:col-span-7">
             <span className="eyebrow text-white/70">Pronto para começar</span>
             <h2 className="h2-display mt-6 text-white">
-              <span className="text-white/55">Conte seu projeto. </span>
-              A gente transforma em aço.
+              <span className="text-white/55">Entre em contato.</span>
+              <br />
+              E compartilhe suas ideias.
             </h2>
             <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-white/70 md:text-[17px]">
-              Atendimento direto com os sócios pelo WhatsApp para discutir engenharia, fabricação, implantação ou manutenção.
+              Atendimento personalizado pelo WhatsApp.
             </p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row lg:col-span-5 lg:flex-col lg:items-end">

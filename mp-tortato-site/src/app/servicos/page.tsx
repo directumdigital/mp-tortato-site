@@ -14,7 +14,7 @@ export default function ServicosPage() {
     <main className="bg-white">
       <PageHeader
         eyebrow="Serviços"
-        title="Da chapa bruta à estrutura instalada."
+        title="Para cada serviço uma solução."
         description="Engenharia, fabricação, implantação e manutenção integradas — escolha por onde quer começar."
         breadcrumbs={[
           { href: "/", label: "Início" },

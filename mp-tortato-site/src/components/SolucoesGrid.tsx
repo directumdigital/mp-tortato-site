@@ -53,10 +53,10 @@ export default function SolucoesGrid() {
           <span className="eyebrow text-white/70">Frentes de atuação</span>
           <h2 className="h2-display mt-6 text-white">
             <span className="text-white/55">Para cada desafio, uma </span>
-            solução em aço.
+            solução.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-[16px] leading-relaxed text-white/70 md:text-[17px]">
-            Engenharia, fabricação, implantação e manutenção integradas — atendendo indústria, agronegócio, química, alimentícia e reciclagem.
+            Engenharia, fabricação, implantação e manutenção integradas — atendendo indústria, agronegócio, química, alimentícia, reciclagem e eletromecânica.
           </p>
           <Link
             href="/contato"

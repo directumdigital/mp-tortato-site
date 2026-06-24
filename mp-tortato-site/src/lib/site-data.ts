@@ -2,8 +2,7 @@ export const siteData = {
   brand: {
     name: "MP Tortato",
     tagline: "Metalúrgica de base. Aço transformado em solução industrial.",
-    description:
-      "Metalúrgica de base em Curitiba. Projetamos, fabricamos e entregamos estruturas e peças metálicas para indústria, construção, agronegócio e fabricantes de máquinas.",
+
   },
   contact: {
     whatsappPrimary: "5541992639915",
@@ -15,6 +14,8 @@ export const siteData = {
       city: "Curitiba/PR",
     },
     site: "mptortato.brasil",
+    instagram: "https://www.instagram.com/mptortato.brasil/",
+    linkedin: "https://www.linkedin.com/company/mp-tortato-ltda/",
   },
   nav: [
     { href: "/servicos", label: "Serviços" },
@@ -46,58 +47,57 @@ export const siteData = {
   obras: [
     {
       slug: "andritz",
-      cliente: "Andritz",
+      cliente: "HHQ-Chipper - Andritz",
       segmento: "Celulose",
-      ano: "2024",
+      ano: "2025",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Fabricação"],
-      titulo: "Fabricação de picadores de alto desempenho para celulose",
+      titulo: "Picadores de auto desempenho e uniformidade.",
       descricao:
-        "Fabricação de picadores de alto desempenho destinados à indústria de celulose — engenharia integrada, fabricação completa e controle de qualidade do recebimento da chapa à expedição final.",
-      thumb: "https://s3.directum.com.br/mptortato/andritz/andritz5.webp",
+        "Em 2025 a MPTORTATO participou da fabricação de picadores de alto desempenho desenvolvidos pela ANDRITZ, sistema responsável pela processamento de madeira com alta capacidade e máxima uniformidade de cavacos. Cada conjunto fabricado pesa aproximadamente 3 toneladas e integra uma das tecnologias mais avançadas do setor de celulose, desenvolvida para garantir alta produtividade, redução de oversize, menor geração de finos e maior rendimento no processo. Os HHQ-Chippers da ANDRITZ utilizam alimentação horizontal e geometria otimizada de corte para produzir cavacos mais uniformes, aumentando a eficiência operacional e a qualidade final da produção.",
+      thumb: "https://s3.directum.com.br/mptortato/andritz/capa.jpg",
       gallery: [
-        "https://s3.directum.com.br/mptortato/andritz/andritz5.webp",
-        "https://s3.directum.com.br/mptortato/andritz/andritz1.webp",
-        "https://s3.directum.com.br/mptortato/andritz/andritz2.webp",
-        "https://s3.directum.com.br/mptortato/andritz/andritz3.webp",
-        "https://s3.directum.com.br/mptortato/andritz/andritz4.webp",
-        "https://s3.directum.com.br/mptortato/andritz/andritz6.webp",
+        "https://s3.directum.com.br/mptortato/andritz/capa.jpg",
+        "https://s3.directum.com.br/mptortato/andritz/andritz1.jpg",
+        "https://s3.directum.com.br/mptortato/andritz/andritz2.jpg",
+        "https://s3.directum.com.br/mptortato/andritz/andritz3.jpg",
       ],
     },
     {
       slug: "klabin",
-      cliente: "Klabin",
+      cliente: "Klabin - Puma II",
       segmento: "Celulose",
-      ano: "2024",
+      ano: "2023",
       local: "Ortigueira/PR",
       escopo: ["Estruturas Metálicas", "Pipe Racks", "Suportação"],
-      titulo: "Pipe racks e suportação industrial",
+      titulo: "Vasos de pressão e interligação e suportes de instrumentação",
       descricao:
-        "Estrutura metálica projetada, fabricada e instalada com controle de qualidade do recebimento da chapa à expedição final.",
+        "Em 2023 a MPTORTATO teve a oportunidade de participar do projeto puma II, com escopo na área de vasos de pressão e suportes de instrumentação. Com um investimento de aproximadamente R$ 12,9 bilhões, o Projeto Puma II é um dos maiores empreendimentos industriais já realizados no Brasil. Desenvolvido pela Klabin em Ortigueira (PR), projeto ampliou a capacidade de produção de papéis para embalagens susten táveis por meio da implantação de duas modernas máquinas de papel e diversas estruturas de apoio. Além de impulsionar a inovação e a competitividade da indústria brasileira, o Puma II gerou milhares de empregos, movimentou a economia regional e consolidou o Paraná como uma referência mundial nos setores de papel, celulose e embalagens. Um projeto que une tecnologia, sustentabilidade e desenvolvimento em escala global.",
       thumb:
-        "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1400&q=80",
+        "https://s3.directum.com.br/mptortato/klabin/capa.png",
       gallery: [
-        "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581091012184-7a3f96b0e4b9?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80",
+        "https://s3.directum.com.br/mptortato/klabin/capa.png",
+        "https://s3.directum.com.br/mptortato/klabin/klabinprincipal.jpg",
+        "https://s3.directum.com.br/mptortato/klabin/klabin1.jpg",
+        "https://s3.directum.com.br/mptortato/klabin/kablin2.jpg",
       ],
     },
     {
       slug: "electrolux",
-      cliente: "Electrolux",
-      segmento: "Indústria Alimentícia",
-      ano: "2023",
-      local: "Curitiba/PR",
+      cliente: "Electrolux - Group Gralha Azul",
+      segmento: "Eletromecânica",
+      ano: "2025",
+      local: "São José dos Pinhas - PR",
       escopo: ["Plataformas", "Guarda-corpo"],
-      titulo: "Plataforma de acesso e guarda-corpo",
+      titulo: "Estrutura Pipe-rack interna",
       descricao:
-        "Linha de produção em aço, projetada para produtividade, segurança operacional e manutenção simplificada.",
+        "Em 2025 a MPTORTATO participou de um dos seus maiores projetos e cliente, fabricando toda a estrutura pipe-rack interna do barracão principal, junto as novas fases de expansões futuras.  Com um investimento de aproximadamente R$ 700 milhões, o Complexo Gralha Azul da Electrolux, em São José dos Pinhais (PR), tornou-se a maior expansão industrial da companhia na América Latina. Projetada para operar com elevados padrões de sustentabilidade e inovação, a unidade possui capacidade para produzir mais de 5 milhões de produtos por ano, fortalecendo a indústria paranaense, gerando cerca de 2 mil empregos e consolidando o Brasil como mercado estratégico para o grupo.",
       thumb:
-        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=80",
+        "https://s3.directum.com.br/mptortato/electrolux/electrolux/capa.webp",
       gallery: [
-        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581093458791-9c4f2a3b4b8a?auto=format&fit=crop&w=1600&q=80",
+        "https://s3.directum.com.br/mptortato/electrolux/electrolux/capa.webp",
+        "https://s3.directum.com.br/mptortato/electrolux/electrolux/electrolux1.jpg",
+        "https://s3.directum.com.br/mptortato/electrolux/electrolux/electrolux2.webp",
       ],
     },
     {
@@ -191,6 +191,11 @@ export const servicos = [
     title: "Suportação",
     short: "Suportes técnicos para dutos, equipamentos e cargas.",
     icon: "wrench",
+  },
+  {
+    title: "Vasos de Pressão",
+    short: "Linhas de pressão e interligação.",
+    icon: "gauge",
   },
 ];
 

@@ -18,10 +18,9 @@ export default function SegmentosHub() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <span className="eyebrow">Segmentos atendidos</span>
+          <span className="eyebrow">Segmentos</span>
           <h2 className="h2-display mt-6 text-brand">
-            <span className="text-slate-400">Aço para </span>
-            cada indústria.
+            Nossos segmentos.
           </h2>
         </motion.div>
 

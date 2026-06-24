@@ -20,14 +20,15 @@ export default function HomeServices() {
           className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end"
         >
           <div className="max-w-2xl">
-            <span className="eyebrow">Segmentos atendidos</span>
+            <span className="eyebrow">Segmentos</span>
             <h2 className="h2-display mt-6 text-brand">
-              <span className="text-slate-400">Aço para </span>
-              cada indústria.
+              Uma solução
+              <br />
+              para cada segmento
             </h2>
           </div>
           <p className="max-w-md text-[15px] leading-relaxed text-slate-600">
-            Atuamos em diferentes segmentos com soluções metálicas sob medida.
+            Atuação diversificada em toda região sul do Brasil.
           </p>
         </motion.div>
 
@@ -43,7 +44,7 @@ export default function HomeServices() {
           className="mt-12 flex justify-center"
         >
           <Link
-            href="/contato"
+            href="/segmentos"
             className="group inline-flex items-center gap-3 rounded-full bg-brand px-7 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:bg-brand-mid hover:-translate-y-0.5"
           >
             Saiba mais

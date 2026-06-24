@@ -6,7 +6,7 @@ import { servicos } from "@/lib/site-data";
 
 export default function ServicosHub() {
   return (
-    <section className="relative bg-white py-24 md:py-32">
+    <section className="relative bg-gray-50 py-24 md:py-32">
       <div className="container-px">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -17,13 +17,12 @@ export default function ServicosHub() {
         >
           <span className="eyebrow">Frentes de atuação</span>
           <h2 className="h2-display mt-6 text-brand">
-            <span className="text-slate-400">Soluções em aço </span>
-            sob medida.
+            Nossos serviços.
           </h2>
         </motion.div>
 
         <div className="mt-16">
-          <GalleryGrid items={servicos} />
+          <GalleryGrid items={servicos} bento />
         </div>
       </div>
     </section>

@@ -14,8 +14,8 @@ export default function SegmentosPage() {
     <main className="bg-white">
       <PageHeader
         eyebrow="Segmentos"
-        title="Aço para cada indústria."
-        description="Atendemos quatro setores com soluções metálicas sob medida — engenharia, fabricação, implantação e manutenção integradas."
+        title="Uma solução para cada segmento."
+        description="Atuação diversificada em toda região sul do Brasil."
         breadcrumbs={[
           { href: "/", label: "Início" },
           { href: "/segmentos", label: "Segmentos" },
