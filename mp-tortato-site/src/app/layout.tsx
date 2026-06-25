@@ -35,6 +35,13 @@ export const metadata: Metadata = {
     "solda industrial",
     "fabricação metálica sob medida",
   ],
+  icons: {
+    icon: [{ url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" }],
+  },
+  other: {
+    "msapplication-TileColor": "#ffffff",
+  },
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
