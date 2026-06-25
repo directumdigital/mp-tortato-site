@@ -96,15 +96,15 @@ export default function Contato() {
               />
               <ContactItem icon={Mail} label="E-mail" value={siteData.contact.emails.join(" / ")} />
               <ContactItem
-                icon={MapPin}
-                label="Endereço"
-                value={`${siteData.contact.address.street} — ${siteData.contact.address.district}, ${siteData.contact.address.city}`}
-              />
-              <ContactItem
                 icon={InstagramIcon}
                 label="Instagram"
                 value="@mptortato.brasil"
                 href={siteData.contact.instagram}
+              />
+              <ContactItem
+                icon={MapPin}
+                label="Endereço"
+                value={`${siteData.contact.address.street} — ${siteData.contact.address.district}, ${siteData.contact.address.city}`}
               />
             </motion.div>
           </motion.div>
