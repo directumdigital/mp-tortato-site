@@ -23,7 +23,7 @@ const logos: Logo[] = [
   { src: `${CDN}/neodent-logo.png`, alt: "Neodent" },
   { src: `/logos/clientes/TEQUALY-LOGO.png`, alt: "Tequaly" },
   { src: `/logos/clientes/LOGO-mamute.svg`, alt: "Mamute" },
-  { src: `/logos/clientes/logo-otz.png`, alt: "OTZ" },
+  { src: `${CDN}/logo-otz.png.jpeg`, alt: "OTZ" },
 ];
 
 const fadeUp = {
