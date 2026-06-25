@@ -71,7 +71,7 @@ export default function ClientesMarquee() {
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"
-                className="max-h-12 max-w-[80%] object-contain opacity-70 grayscale transition-all duration-500 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0 md:max-h-14"
+                className="max-h-12 max-w-[80%] object-contain mix-blend-multiply opacity-70 grayscale transition-all duration-500 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0 md:max-h-14"
               />
             </motion.li>
           ))}
