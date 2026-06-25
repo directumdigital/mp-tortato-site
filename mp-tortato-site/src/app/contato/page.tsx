@@ -13,7 +13,7 @@ export default function ContatoPage() {
     <main className="bg-white">
       <PageHeader
         eyebrow="Contato"
-        title="Aço começa com uma conversa."
+        title="Orçamento direto com quem fabrica."
         description="Solicite orçamento da MP Tortato pelo WhatsApp."
       />
       <Contato />
