@@ -2,28 +2,28 @@
 
 import { motion } from "framer-motion";
 
-type Logo = { src: string; alt: string };
+type Logo = { src: string; alt: string; zoom?: number };
 
 const CDN = "https://s3.directum.com.br/mptortato";
 
 const logos: Logo[] = [
-  { src: `${CDN}/Electrolux-Logo.png`, alt: "Electrolux" },
-  { src: `${CDN}/andritz-logo-icon.webp`, alt: "Andritz" },
+  { src: `/logos/clientes/Electrolux-Logo.png`, alt: "Electrolux" },
+  { src: `/logos/clientes/andritz-logo-icon.webp`, alt: "Andritz" },
   { src: `/logos/clientes/elco.png`, alt: "Elco Engenharia" },
-  { src: `${CDN}/Klabin.svg`, alt: "Klabin Ortigueira" },
-  { src: `/logos/clientes/potencial.png`, alt: "Grupo Potencial" },
-  { src: `${CDN}/logo_continental.svg`, alt: "Continental Pneus" },
+  { src: `/logos/clientes/Klabin.svg`, alt: "Klabin Ortigueira" },
+  { src: `/logos/clientes/potencial.png`, alt: "Grupo Potencial", zoom: 1.7 },
+  { src: `/logos/clientes/logo_continental.svg`, alt: "Continental Pneus" },
   { src: `${CDN}/Nissin_Logo.svg.png`, alt: "Nissin Foods" },
   { src: `${CDN}/Schreiber-Logo.png`, alt: "Schreiber Foods" },
   { src: `${CDN}/Komatsu-logo.png`, alt: "Komatsu" },
   { src: `${CDN}/Sumitomo-logo.jpg`, alt: "Sumitomo Rubber do Brasil" },
-  { src: `${CDN}/logo-zaffari.svg`, alt: "Zaffari & Bourbon" },
-  { src: `${CDN}/Envases_Logo.svg.png`, alt: "Envases (CristalPet)" },
-  { src: `${CDN}/logork.png`, alt: "Rolkran" },
+  { src: `/logos/clientes/logo-zaffari.svg`, alt: "Zaffari & Bourbon" },
+  { src: `/logos/clientes/Envases_Logo.svg.png`, alt: "Envases (CristalPet)" },
+  { src: `/logos/clientes/logork.png`, alt: "Rolkran" },
   { src: `${CDN}/neodent-logo.png`, alt: "Neodent" },
-  { src: `${CDN}/TEQUALY-LOGO.png`, alt: "Tequaly" },
-  { src: `${CDN}/LOGO-mamute.jpeg`, alt: "Mamute" },
-  { src: `${CDN}/logo-otz.png.jpeg`, alt: "OTZ" },
+  { src: `/logos/clientes/TEQUALY-LOGO.png`, alt: "Tequaly" },
+  { src: `/logos/clientes/LOGO-mamute.svg`, alt: "Mamute" },
+  { src: `/logos/clientes/logo-otz.png`, alt: "OTZ" },
 ];
 
 const fadeUp = {
@@ -71,7 +71,8 @@ export default function ClientesMarquee() {
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"
-                className="max-h-12 max-w-[80%] object-contain opacity-70 grayscale transition-all duration-500 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0 md:max-h-14"
+                style={logo.zoom ? { transform: `scale(${logo.zoom})` } : undefined}
+                className="max-h-12 max-w-[80%] object-contain opacity-70 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 md:max-h-14"
               />
             </motion.li>
           ))}
