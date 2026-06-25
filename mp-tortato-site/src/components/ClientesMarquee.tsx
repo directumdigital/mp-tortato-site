@@ -9,9 +9,9 @@ const CDN = "https://s3.directum.com.br/mptortato";
 const logos: Logo[] = [
   { src: `${CDN}/Electrolux-Logo.png`, alt: "Electrolux" },
   { src: `${CDN}/andritz-logo-icon.webp`, alt: "Andritz" },
-  { src: `${CDN}/elco_engenharia_logo.jpeg`, alt: "Elco Engenharia" },
+  { src: `/logos/clientes/elco.jpeg`, alt: "Elco Engenharia" },
   { src: `${CDN}/Klabin.svg`, alt: "Klabin Ortigueira" },
-  { src: `${CDN}/grupo_potencial_logo.jpeg`, alt: "Grupo Potencial" },
+  { src: `/logos/clientes/potencial.jpeg`, alt: "Grupo Potencial" },
   { src: `${CDN}/logo_continental.svg`, alt: "Continental Pneus" },
   { src: `${CDN}/Nissin_Logo.svg.png`, alt: "Nissin Foods" },
   { src: `${CDN}/Schreiber-Logo.png`, alt: "Schreiber Foods" },
