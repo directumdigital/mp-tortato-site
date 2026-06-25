@@ -9,9 +9,9 @@ const CDN = "https://s3.directum.com.br/mptortato";
 const logos: Logo[] = [
   { src: `${CDN}/Electrolux-Logo.png`, alt: "Electrolux" },
   { src: `${CDN}/andritz-logo-icon.webp`, alt: "Andritz" },
-  { src: `/logos/clientes/elco.jpeg`, alt: "Elco Engenharia" },
+  { src: `/logos/clientes/elco.png`, alt: "Elco Engenharia" },
   { src: `${CDN}/Klabin.svg`, alt: "Klabin Ortigueira" },
-  { src: `/logos/clientes/potencial.jpeg`, alt: "Grupo Potencial" },
+  { src: `/logos/clientes/potencial.png`, alt: "Grupo Potencial" },
   { src: `${CDN}/logo_continental.svg`, alt: "Continental Pneus" },
   { src: `${CDN}/Nissin_Logo.svg.png`, alt: "Nissin Foods" },
   { src: `${CDN}/Schreiber-Logo.png`, alt: "Schreiber Foods" },
@@ -71,7 +71,7 @@ export default function ClientesMarquee() {
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"
-                className="max-h-12 max-w-[80%] object-contain mix-blend-multiply opacity-70 grayscale transition-all duration-500 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0 md:max-h-14"
+                className="max-h-12 max-w-[80%] object-contain opacity-70 grayscale transition-all duration-500 group-hover:scale-[1.04] group-hover:opacity-100 group-hover:grayscale-0 md:max-h-14"
               />
             </motion.li>
           ))}
