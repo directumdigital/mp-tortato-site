@@ -5,7 +5,6 @@ import {
   motion,
   useScroll,
   useTransform,
-  type MotionValue,
 } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { siteData } from "@/lib/site-data";
@@ -13,12 +12,6 @@ import { siteData } from "@/lib/site-data";
 const FRAME_COUNT = 112;
 const framePath = (i: number) =>
   `/sequence-soldador/ezgif-frame-${String(i).padStart(3, "0")}.png`;
-
-const REVEAL_RANGES: Array<[number, number]> = [
-  [0.05, 0.15],
-  [0.22, 0.32],
-  [0.4, 0.5],
-];
 
 export default function EmpresaTimeline() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -219,19 +212,22 @@ export default function EmpresaTimeline() {
                 className="absolute left-4 top-0 w-px bg-gradient-to-b from-brand-mid via-brand to-brand"
               />
 
-              <ol className="space-y-10 md:space-y-12">
-                {siteData.timeline.map((t, i) => (
+              <motion.ol
+                initial="hidden"
+                animate="show"
+                variants={{ show: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } } }}
+                className="space-y-10 md:space-y-12"
+              >
+                {siteData.timeline.map((t) => (
                   <TimelineItem
                     key={t.year}
-                    progress={scrollYProgress}
-                    range={REVEAL_RANGES[i] ?? [0.1, 0.3]}
                     year={t.year}
                     title={t.title}
                     body={t.body}
                     future={t.future}
                   />
                 ))}
-              </ol>
+              </motion.ol>
             </div>
           </div>
         </div>
@@ -242,26 +238,22 @@ export default function EmpresaTimeline() {
 }
 
 function TimelineItem({
-  progress,
-  range,
   year,
   title,
   body,
   future,
 }: {
-  progress: MotionValue<number>;
-  range: [number, number];
   year: string;
   title: string;
   body: string;
   future: boolean;
 }) {
-  const [start, end] = range;
-  const opacity = useTransform(progress, [start, end], [0, 1], { clamp: true });
-  const y = useTransform(progress, [start, end], [40, 0], { clamp: true });
-
   return (
-    <motion.li style={{ opacity, y }} className="relative pl-12">
+    <motion.li
+      variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="relative pl-12"
+    >
       <span
         className={`absolute left-4 top-2 -translate-x-1/2 flex h-4 w-4 items-center justify-center rounded-full border-2 ${
           future ? "border-brand bg-white" : "border-brand bg-brand"
