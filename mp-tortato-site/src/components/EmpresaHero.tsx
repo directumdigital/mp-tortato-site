@@ -92,7 +92,7 @@ export default function EmpresaHero() {
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,15,61,0)_55%,rgba(10,15,61,0.9))]"
       />
 
-      <div className="container-px relative z-10 pb-24 pt-36 md:pb-32 md:pt-48">
+      <div className="container-px relative z-10 pb-16 pt-28 md:pb-32 md:pt-48">
         <motion.nav
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ export default function EmpresaHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.9 }}
-          className="mt-14 grid grid-cols-3 gap-4 border-t border-white/10 pt-10 md:max-w-2xl"
+          className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8 md:mt-14 md:max-w-2xl md:pt-10"
         >
           {[
             { v: "+700m²", l: "Área fabril" },
@@ -155,12 +155,12 @@ export default function EmpresaHero() {
           ))}
         </motion.div>
 
-        <div className="mt-16 flex items-end justify-between gap-6">
+        <div className="mt-10 flex items-end justify-between gap-6 md:mt-16">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55"
+            className="hidden sm:flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55"
           >
             <span>Role para conhecer nossa história</span>
             <motion.span

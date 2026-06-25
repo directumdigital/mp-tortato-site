@@ -33,7 +33,7 @@ export default function PageHeader({
         className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,15,61,0)_60%,rgba(10,15,61,0.6))]"
       />
 
-      <div className="container-px relative z-10 pb-20 pt-36 md:pb-28 md:pt-44">
+      <div className="container-px relative z-10 pb-14 pt-28 md:pb-28 md:pt-44">
         <motion.nav
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}

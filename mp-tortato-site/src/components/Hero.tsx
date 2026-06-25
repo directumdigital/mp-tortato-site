@@ -30,7 +30,7 @@ export default function Hero() {
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(42,58,140,0.45),transparent_55%)]"
       />
 
-      <div className="container-px relative z-10 w-full pb-40 pt-40 md:pb-56 md:pt-44">
+      <div className="container-px relative z-10 w-full pb-20 pt-28 md:pb-56 md:pt-44">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

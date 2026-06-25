@@ -180,7 +180,7 @@ function ContactItem({
             {value}
           </a>
         ) : (
-          <div className="mt-1 text-[15px] font-medium text-ink">{value}</div>
+          <div className="mt-1 break-all text-[15px] font-medium text-ink">{value}</div>
         )}
       </div>
     </div>

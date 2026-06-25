@@ -136,12 +136,43 @@ export default function EmpresaTimeline() {
   }, [frameIndex]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-white"
-      style={{ height: "400vh" }}
-    >
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+    <>
+      {/* Mobile: static version */}
+      <section className="bg-white py-20 md:hidden">
+        <div className="container-px">
+          <span className="eyebrow">Trajetória</span>
+          <h2 className="h2-display mt-6 text-brand">
+            <span className="text-slate-400">Marcos da </span>
+            MP Tortato.
+          </h2>
+          <p className="mt-6 text-[15px] leading-relaxed text-slate-700">
+            Cada etapa reforça a base: engenharia, aço e qualidade industrial.
+          </p>
+          <ol className="relative mt-10 space-y-6 pl-10">
+            <div className="absolute left-4 top-0 h-full w-px bg-brand/10" />
+            {siteData.timeline.map((t) => (
+              <li key={t.year} className="relative">
+                <span className={`absolute left-[-24px] top-2 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full border-2 ${t.future ? "border-brand bg-white" : "border-brand bg-brand"}`}>
+                  {t.future && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/40" />}
+                </span>
+                <div className="overflow-hidden rounded-2xl border border-black/[0.06] bg-white p-5 shadow-soft">
+                  <span className="mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-mid">{t.year}</span>
+                  <h3 className="mt-2 text-[18px] font-extrabold leading-tight tracking-tight text-brand">{t.title}</h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-slate-700">{t.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Desktop: scroll-jacking animation */}
+      <section
+        ref={sectionRef}
+        className="relative hidden bg-white md:block"
+        style={{ height: "400vh" }}
+      >
+      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <canvas ref={canvasRef} aria-hidden className="absolute inset-0 h-full w-full" />
 
         <div
@@ -205,7 +236,8 @@ export default function EmpresaTimeline() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
 
