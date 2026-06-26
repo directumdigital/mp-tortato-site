@@ -1,13 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import GridPattern from "./GridPattern";
-
-const ShapeGrid = dynamic(() => import("./ShapeGrid"), { ssr: false });
+import ShapeGrid from "./ShapeGrid";
 
 export default function HomeCta() {
   const [isDesktop, setIsDesktop] = useState(false);

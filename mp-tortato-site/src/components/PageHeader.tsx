@@ -1,12 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-
-const ShapeGrid = dynamic(() => import("./ShapeGrid"), { ssr: false });
+import ShapeGrid from "./ShapeGrid";
 
 type Crumb = { href: string; label: string };
 

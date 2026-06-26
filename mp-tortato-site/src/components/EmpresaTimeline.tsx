@@ -29,9 +29,6 @@ export default function EmpresaTimeline() {
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.85], ["0%", "100%"]);
 
   useEffect(() => {
-    // Only load frames on desktop — 112 images (~112 MB) are unused on mobile
-    if (window.innerWidth < 768) return;
-
     let cancelled = false;
     const images: HTMLImageElement[] = [];
     let count = 0;
