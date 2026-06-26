@@ -36,7 +36,7 @@ export default function PageHeader({
             borderColor="rgba(255,255,255,0.18)"
             hoverFillColor="rgba(255,255,255,0.85)"
             shape="square"
-            hoverTrailAmount={3}
+            hoverTrailAmount={0}
           />
         </div>
       )}
