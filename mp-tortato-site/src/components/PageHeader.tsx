@@ -1,9 +1,12 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import ShapeGrid from "./ShapeGrid";
+
+const ShapeGrid = dynamic(() => import("./ShapeGrid"), { ssr: false });
 
 type Crumb = { href: string; label: string };
 
@@ -20,6 +23,9 @@ export default function PageHeader({
   breadcrumbs?: Crumb[];
   showShapeGrid?: boolean;
 }) {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => { setIsDesktop(window.innerWidth >= 768); }, []);
+
   const trail: Crumb[] =
     breadcrumbs && breadcrumbs.length > 0
       ? breadcrumbs
@@ -27,7 +33,7 @@ export default function PageHeader({
 
   return (
     <section className="relative isolate overflow-hidden bg-brand text-white">
-      {showShapeGrid && (
+      {showShapeGrid && isDesktop && (
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-50">
           <ShapeGrid
             speed={0.4}

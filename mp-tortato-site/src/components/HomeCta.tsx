@@ -1,17 +1,25 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import GridPattern from "./GridPattern";
-import ShapeGrid from "./ShapeGrid";
+
+const ShapeGrid = dynamic(() => import("./ShapeGrid"), { ssr: false });
 
 export default function HomeCta() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => { setIsDesktop(window.innerWidth >= 768); }, []);
+
   return (
     <section className="relative isolate overflow-hidden bg-brand text-white">
-      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
-        <ShapeGrid speed={0.4} squareSize={48} direction="diagonal" borderColor="rgba(255,255,255,0.18)" shape="square" hoverTrailAmount={0} />
-      </div>
+      {isDesktop && (
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
+          <ShapeGrid speed={0.4} squareSize={48} direction="diagonal" borderColor="rgba(255,255,255,0.18)" shape="square" hoverTrailAmount={0} />
+        </div>
+      )}
       <GridPattern tone="dark" size={64} />
 
       <motion.div

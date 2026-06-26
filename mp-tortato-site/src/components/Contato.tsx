@@ -73,14 +73,14 @@ export default function Contato() {
               transition={{ duration: 0.7 }}
               className="h2-display mt-5 text-brand"
             >
-              Conte sobre seu projeto em aço.
+              Conte sobre seu projeto.
             </motion.h2>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.7 }}
               className="mt-6 text-base leading-relaxed text-slate-700 md:text-[17px]"
             >
-              Atendimento direto com os Marcos Paulo né vida pelo WhatsApp. Preencha o formulário ou use um dos canais ao lado.
+              Atendimento direto pelo WhatsApp com a equipe MP Tortato. Preencha o formulário ou use um dos canais abaixo.
             </motion.p>
 
             <motion.div
