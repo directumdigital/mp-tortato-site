@@ -7,9 +7,17 @@ import { servicos } from "@/lib/site-data";
 
 export default function ServicosHub() {
   return (
-    <section className="relative overflow-hidden bg-brand-ice py-24 md:py-32">
+    <section className="relative isolate overflow-hidden bg-brand-ice py-24 md:py-32">
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[url('/servicos/picador.png')] bg-[length:50%_auto] bg-[position:-2%_center] bg-no-repeat opacity-60"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-ice/60 via-brand-ice/40 to-brand-ice/70"
+      />
       <GridPattern tone="light" size={56} />
-      <div className="container-px">
+      <div className="container-px relative">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

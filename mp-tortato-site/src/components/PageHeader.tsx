@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import ShapeGrid from "./ShapeGrid";
 
 type Crumb = { href: string; label: string };
 
@@ -11,11 +12,13 @@ export default function PageHeader({
   title,
   description,
   breadcrumbs,
+  showShapeGrid = false,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   breadcrumbs?: Crumb[];
+  showShapeGrid?: boolean;
 }) {
   const trail: Crumb[] =
     breadcrumbs && breadcrumbs.length > 0
@@ -24,13 +27,26 @@ export default function PageHeader({
 
   return (
     <section className="relative isolate overflow-hidden bg-brand text-white">
+      {showShapeGrid && (
+        <div aria-hidden className="absolute inset-0 opacity-50">
+          <ShapeGrid
+            speed={0.4}
+            squareSize={48}
+            direction="diagonal"
+            borderColor="rgba(255,255,255,0.18)"
+            hoverFillColor="rgba(255,255,255,0.85)"
+            shape="square"
+            hoverTrailAmount={3}
+          />
+        </div>
+      )}
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(42,58,140,0.55),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(42,58,140,0.55),transparent_55%)]"
       />
       <div
         aria-hidden
-        className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,15,61,0)_60%,rgba(10,15,61,0.6))]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,15,61,0)_60%,rgba(10,15,61,0.6))]"
       />
 
       <div className="container-px relative z-10 pb-14 pt-28 md:pb-28 md:pt-44">

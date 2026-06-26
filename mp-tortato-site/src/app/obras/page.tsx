@@ -15,6 +15,7 @@ export default function ObrasPage() {
         eyebrow="Obras"
         title="Experiencia, tecnologia & inovação."
         description="Atuação em todo sul do Brasil."
+        showShapeGrid
       />
       <Obras />
     </main>

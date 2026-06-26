@@ -11,8 +11,19 @@ export default function Obras() {
   const [active, setActive] = useState<Obra | null>(null);
 
   return (
-    <section id="obras" className="bg-brand-ice py-24 md:py-32">
-      <div className="container-px">
+    <section
+      id="obras"
+      className="relative isolate overflow-hidden bg-brand-ice py-24 md:py-32"
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[url('/obras/continental.jpeg')] bg-cover bg-center bg-no-repeat opacity-60"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-ice/60 via-brand-ice/40 to-brand-ice/70"
+      />
+      <div className="container-px relative">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
