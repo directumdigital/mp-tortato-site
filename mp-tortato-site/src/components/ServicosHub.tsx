@@ -8,6 +8,19 @@ import { servicos } from "@/lib/site-data";
 export default function ServicosHub() {
   return (
     <section className="relative isolate overflow-hidden bg-brand-ice py-24 md:py-32">
+      {/* Picador image with edge-fade to hide border */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[url('/servicos/picador.png')] bg-[length:55%_auto] bg-center bg-no-repeat opacity-30"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 80% at center, transparent 30%, #EEF2FB 75%)",
+        }}
+      />
       <GridPattern tone="light" size={56} />
       <div className="container-px relative">
         <motion.div
