@@ -28,7 +28,7 @@ export default function PageHeader({
   return (
     <section className="relative isolate overflow-hidden bg-brand text-white">
       {showShapeGrid && (
-        <div aria-hidden className="absolute inset-0 opacity-50">
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-50">
           <ShapeGrid
             speed={0.4}
             squareSize={48}
