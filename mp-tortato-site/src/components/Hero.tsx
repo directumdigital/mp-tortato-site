@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
@@ -12,22 +13,15 @@ export default function Hero() {
       id="hero"
       className="relative isolate flex min-h-[100svh] w-full items-end overflow-hidden bg-brand text-white"
     >
-      {/* hero-bg.mp4 + hero-bg.webm = ~3 MB vs hero-bg.gif = 29 MB
-          To convert: ffmpeg -i hero-bg.gif -c:v libx264 -movflags faststart -pix_fmt yuv420p hero-bg.mp4
-          Then drop hero-bg.mp4 (and optionally hero-bg.webm) in /public */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden
-        className="absolute inset-0 h-full w-full object-cover object-center"
-      >
-        <source src="/hero-bg.webm" type="video/webm" />
-        <source src="/hero-bg.mp4" type="video/mp4" />
-        <source src="/hero-bg.gif" type="image/gif" />
-      </video>
+      <Image
+        src="/hero-bg.gif"
+        alt="Parque fabril da MP Tortato — corte, dobra e solda de aço"
+        fill
+        priority
+        unoptimized
+        sizes="100vw"
+        className="object-cover object-center"
+      />
 
       <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/75 to-brand/15" />
       <div className="absolute inset-0 bg-gradient-to-b from-brand/40 via-transparent to-brand/60" />
