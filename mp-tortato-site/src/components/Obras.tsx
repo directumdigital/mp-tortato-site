@@ -32,7 +32,7 @@ export default function Obras() {
             </h2>
           </div>
           <p className="max-w-md text-[15px] leading-relaxed text-slate-600">
-            Desenvolvendo projetos metálicos para todos os segmentos.
+            Trabalhos em Destaque.
           </p>
         </motion.div>
 
