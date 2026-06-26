@@ -7,22 +7,22 @@ type Logo = { src: string; alt: string; zoom?: number };
 const CDN = "https://s3.directum.com.br/mptortato";
 
 const logos: Logo[] = [
-  { src: `/logos/clientes/Electrolux-Logo.png`, alt: "Electrolux" },
-  { src: `/logos/clientes/andritz-logo-icon.webp`, alt: "Andritz" },
+  { src: `/logos/clientes/electrolux.png`, alt: "Electrolux" },
+  { src: `/logos/clientes/andritz.webp`, alt: "Andritz" },
   { src: `/logos/clientes/elco.png`, alt: "Elco Engenharia" },
-  { src: `/logos/clientes/Klabin.svg`, alt: "Klabin Ortigueira" },
+  { src: `/logos/clientes/klabin.svg`, alt: "Klabin Ortigueira" },
   { src: `/logos/clientes/potencial.png`, alt: "Grupo Potencial", zoom: 1.7 },
-  { src: `/logos/clientes/logo_continental.svg`, alt: "Continental Pneus" },
+  { src: `/logos/clientes/continental.svg`, alt: "Continental Pneus" },
   { src: `${CDN}/Nissin_Logo.svg.png`, alt: "Nissin Foods" },
   { src: `${CDN}/Schreiber-Logo.png`, alt: "Schreiber Foods" },
   { src: `${CDN}/Komatsu-logo.png`, alt: "Komatsu" },
   { src: `${CDN}/Sumitomo-logo.jpg`, alt: "Sumitomo Rubber do Brasil" },
-  { src: `/logos/clientes/logo-zaffari.svg`, alt: "Zaffari & Bourbon" },
-  { src: `/logos/clientes/Envases_Logo.svg.png`, alt: "Envases (CristalPet)" },
-  { src: `/logos/clientes/logork.png`, alt: "Rolkran" },
+  { src: `/logos/clientes/zaffari.svg`, alt: "Zaffari & Bourbon" },
+  { src: `/logos/clientes/envases.png`, alt: "Envases (CristalPet)" },
+  { src: `/logos/clientes/rolkran.png`, alt: "Rolkran" },
   { src: `${CDN}/neodent-logo.png`, alt: "Neodent" },
-  { src: `/logos/clientes/TEQUALY-LOGO.png`, alt: "Tequaly" },
-  { src: `/logos/clientes/LOGO-mamute.svg`, alt: "Mamute" },
+  { src: `/logos/clientes/tequaly.png`, alt: "Tequaly" },
+  { src: `/logos/clientes/mamute.svg`, alt: "Mamute" },
   { src: `${CDN}/logo-otz.png.jpeg`, alt: "OTZ" },
 ];
 
