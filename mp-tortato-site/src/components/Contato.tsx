@@ -80,7 +80,7 @@ export default function Contato() {
               transition={{ duration: 0.7 }}
               className="mt-6 text-base leading-relaxed text-slate-700 md:text-[17px]"
             >
-              Atendimento direto com os sócios pelo WhatsApp. Preencha o formulário ou use um dos canais ao lado.
+              Atendimento direto com os Marcos Paulo né vida pelo WhatsApp. Preencha o formulário ou use um dos canais ao lado.
             </motion.p>
 
             <motion.div
