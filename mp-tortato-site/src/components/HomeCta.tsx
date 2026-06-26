@@ -4,10 +4,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import GridPattern from "./GridPattern";
+import ShapeGrid from "./ShapeGrid";
 
 export default function HomeCta() {
   return (
     <section className="relative isolate overflow-hidden bg-brand text-white">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
+        <ShapeGrid speed={0.4} squareSize={48} direction="diagonal" borderColor="rgba(255,255,255,0.18)" shape="square" hoverTrailAmount={0} />
+      </div>
       <GridPattern tone="dark" size={64} />
 
       <motion.div

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDown, ChevronRight } from "lucide-react";
+import ShapeGrid from "./ShapeGrid";
 
 const TITLE_LINE_1 = "Da garagem ao aço";
 const TITLE_LINE_2 = "em escala industrial.";
@@ -61,6 +62,9 @@ export default function EmpresaHero() {
         ))}
       </div>
 
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-[1] opacity-30">
+        <ShapeGrid speed={0.3} squareSize={48} direction="diagonal" borderColor="rgba(255,255,255,0.18)" shape="square" hoverTrailAmount={0} />
+      </div>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-brand/85 via-brand/65 to-brand"

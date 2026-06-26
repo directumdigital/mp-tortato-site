@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
+import ShapeGrid from "./ShapeGrid";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -23,6 +24,9 @@ export default function Hero() {
         className="object-cover object-center"
       />
 
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-[1] opacity-30">
+        <ShapeGrid speed={0.3} squareSize={48} direction="diagonal" borderColor="rgba(255,255,255,0.18)" shape="square" hoverTrailAmount={0} />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-brand/95 via-brand/75 to-brand/15" />
       <div className="absolute inset-0 bg-gradient-to-b from-brand/40 via-transparent to-brand/60" />
       <div
