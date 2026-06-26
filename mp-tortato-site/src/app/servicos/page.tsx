@@ -16,6 +16,7 @@ export default function ServicosPage() {
         eyebrow="Serviços"
         title="Para cada serviço uma solução."
         description="Engenharia, fabricação, implantação e manutenção integradas — escolha por onde quer começar."
+        showShapeGrid
         breadcrumbs={[
           { href: "/", label: "Início" },
           { href: "/servicos", label: "Serviços" },

@@ -16,6 +16,7 @@ export default function SegmentosPage() {
         eyebrow="Segmentos"
         title="Uma solução para cada segmento."
         description="Atuação diversificada em toda região sul do Brasil."
+        showShapeGrid
         breadcrumbs={[
           { href: "/", label: "Início" },
           { href: "/segmentos", label: "Segmentos" },

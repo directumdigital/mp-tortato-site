@@ -15,6 +15,7 @@ export default function ContatoPage() {
         eyebrow="Contato"
         title="Descreva o projeto. A gente fabrica."
         description="Solicite orçamento da MP Tortato pelo WhatsApp."
+        showShapeGrid
       />
       <Contato />
     </main>
