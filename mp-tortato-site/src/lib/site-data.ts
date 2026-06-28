@@ -246,7 +246,7 @@ export const siteData = {
     {
       slug: "elco",
       cliente: "Envases",
-      segmento: "Reciclagem",
+      segmento: "Indústria da Reciclagem",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
