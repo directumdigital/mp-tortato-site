@@ -191,7 +191,7 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Komastu",
+      cliente: "Komatsu",
       segmento: "Mineração",
       ano: "2022",
       local: "Curitiba/PR",
