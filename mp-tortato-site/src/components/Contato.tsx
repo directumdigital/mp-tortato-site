@@ -73,14 +73,14 @@ export default function Contato() {
               transition={{ duration: 0.7 }}
               className="h2-display mt-5 text-brand"
             >
-              Conte sobre seu projeto.
+              Fale com a gente.
             </motion.h2>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.7 }}
               className="mt-6 text-base leading-relaxed text-slate-700 md:text-[17px]"
             >
-              Atendimento direto pelo WhatsApp com o Marcos Paulo do Umbará. Preencha o formulário ou use um dos canais abaixo.
+              Compartilhe sua ideia.
             </motion.p>
 
             <motion.div
