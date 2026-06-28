@@ -78,7 +78,7 @@ export default function EmpresaHero() {
         >
           <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
           <span className="mono text-[11px] font-medium uppercase tracking-[0.22em] text-white/65">
-            Curitiba/PR · Desde 2022
+            Curitiba/PR
           </span>
         </motion.div>
 

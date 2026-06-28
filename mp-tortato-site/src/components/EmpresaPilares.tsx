@@ -1,28 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Lightbulb,
-  ShieldCheck,
-  Factory,
-  HardHat,
-  Clock,
-  Handshake,
-  Compass,
-  type LucideIcon,
-} from "lucide-react";
+import { Diamond, Target, Square } from "lucide-react";
 import GridPattern from "./GridPattern";
-import Spotlight from "./Spotlight";
-import { features } from "@/lib/site-data";
 
-const icons: Record<string, LucideIcon> = {
-  compass: Compass,
-  shieldCheck: ShieldCheck,
-  factory: Factory,
-  hardHat: HardHat,
-  clock: Clock,
-  handshake: Handshake,
-};
+const PILARES = [
+  {
+    icon: Diamond,
+    title: "Missão",
+    body: "Entregar estruturas e peças metálicas sob medida com precisão de engenharia, prazo cumprido e qualidade industrial.",
+    bullets: null,
+  },
+  {
+    icon: Target,
+    title: "Visão",
+    body: "Ser referência em fabricação metálica no Sul do país, reconhecida pela confiabilidade técnica e pela capacidade de crescer com escala industrial.",
+    bullets: null,
+  },
+  {
+    icon: Square,
+    title: "Valores",
+    body: null,
+    bullets: [
+      "Precisão de engenharia",
+      "Compromisso com o prazo",
+      "Segurança no chão de fábrica",
+      "Transparência com o cliente",
+    ],
+  },
+];
 
 export default function EmpresaPilares() {
   return (
@@ -35,61 +41,60 @@ export default function EmpresaPilares() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end"
+          className="mb-16 text-center"
         >
-          <div className="max-w-2xl">
-            <span className="eyebrow">Pilares</span>
-            <h2 className="h2-display mt-6 text-brand">
-              <span className="text-slate-400">O que sustenta a </span>
-              MP Tortato.
-            </h2>
-          </div>
-          <p className="max-w-md text-[15px] leading-relaxed text-slate-600">
-            Valores que orientam cada projeto, fabricação, implantação e manutenção entregue em aço.
-          </p>
+          <span className="eyebrow">Pilares</span>
+          <h2 className="h2-display mt-6 text-brand">
+            <span className="text-slate-400">O que sustenta a </span>
+            MP Tortato.
+          </h2>
         </motion.div>
 
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          variants={{ show: { transition: { staggerChildren: 0.08 } } }}
-          className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+          className="grid grid-cols-1 gap-5 md:grid-cols-3"
         >
-          {features.map((f, i) => {
-            const Icon = icons[f.icon] ?? Lightbulb;
+          {PILARES.map((p, i) => {
+            const Icon = p.icon;
             return (
               <motion.div
-                key={f.title}
-                variants={{
-                  hidden: { opacity: 0, y: 28 },
-                  show: { opacity: 1, y: 0 },
-                }}
+                key={p.title}
+                variants={{ hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0 } }}
                 transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                className="relative overflow-hidden rounded-2xl border border-black/[0.06] bg-white p-8 shadow-soft"
               >
-                <Spotlight
-                  tone="light"
-                  className="group relative h-full overflow-hidden rounded-card border border-black/[0.06] bg-white/85 p-7 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-mid/30 hover:bg-white hover:shadow-[0_24px_60px_-24px_rgba(10,15,61,0.35)] md:p-8"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white transition-all duration-300 group-hover:bg-brand-mid">
-                      <Icon size={20} strokeWidth={1.75} />
-                    </span>
-                    <span className="mono text-[11px] font-medium tracking-wider text-brand-mid">
-                      {String(i + 1).padStart(2, "0")} / {String(features.length).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h3 className="mt-7 text-[22px] font-extrabold leading-tight tracking-tight text-brand">
-                    {f.title}
-                  </h3>
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand text-white">
+                    <Icon size={18} strokeWidth={1.75} />
+                  </span>
+                  <span className="mono text-[11px] font-medium tracking-wider text-slate-400">
+                    {String(i + 1).padStart(2, "0")} / {String(PILARES.length).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <h3 className="mt-8 text-[22px] font-extrabold leading-tight tracking-tight text-brand">
+                  {p.title}
+                </h3>
+
+                {p.body && (
                   <p className="mt-3 text-[14.5px] leading-relaxed text-slate-600">
-                    {f.body}
+                    {p.body}
                   </p>
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-7 bottom-0 h-px origin-left scale-x-0 bg-gradient-to-r from-brand to-brand-mid transition-transform duration-500 group-hover:scale-x-100"
-                  />
-                </Spotlight>
+                )}
+
+                {p.bullets && (
+                  <ul className="mt-3 space-y-2">
+                    {p.bullets.map((b) => (
+                      <li key={b} className="flex items-center gap-2 text-[14.5px] text-slate-600">
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-sm bg-brand" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
             );
           })}
