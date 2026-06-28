@@ -1,64 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const TITLE_LINE_1 = "Da garagem ao aço";
 const TITLE_LINE_2 = "em escala industrial.";
 
 const CDN = "https://s3.directum.com.br/mptortato";
 
-const SLIDES = [
-  { src: `${CDN}/fachada.jpg`, alt: "Fachada da MP Tortato" },
-  { src: `${CDN}/barracao-1.jpg`, alt: "Barracão MP Tortato" },
-  { src: `${CDN}/barracao-2.jpg`, alt: "Parque fabril MP Tortato" },
-  { src: `${CDN}/barracao-3.jpg`, alt: "Estruturas em produção" },
-  { src: `${CDN}/maquinario-solda-1.jpg`, alt: "Maquinário de solda" },
-  { src: `${CDN}/maquinario-solda-2.jpg`, alt: "Maquinário industrial" },
-];
-
-const SLIDE_DURATION = 4500;
-
 export default function EmpresaHero() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % SLIDES.length);
-    }, SLIDE_DURATION);
-    return () => window.clearInterval(id);
-  }, []);
-
   return (
     <section className="relative isolate overflow-hidden bg-brand text-white">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        {SLIDES.map((s, i) => (
-          <motion.div
-            key={s.src}
-            initial={false}
-            animate={{
-              opacity: i === index ? 1 : 0,
-              scale: i === index ? 1 : 1.04,
-            }}
-            transition={{
-              opacity: { duration: 1.8, ease: [0.4, 0, 0.2, 1] },
-              scale: { duration: 5, ease: "linear" },
-            }}
-            className="absolute inset-0 will-change-[opacity,transform]"
-          >
-            <Image
-              src={s.src}
-              alt={s.alt}
-              fill
-              priority={i < 2}
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-          </motion.div>
-        ))}
+        <Image
+          src={`${CDN}/barracao-3.jpg`}
+          alt="Estruturas em produção"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
       </div>
 
       <div
@@ -123,74 +86,6 @@ export default function EmpresaHero() {
           <RevealLine text={TITLE_LINE_1} delay={0.2} muted />
           <RevealLine text={TITLE_LINE_2} delay={0.45} />
         </h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-8 max-w-2xl text-lg leading-relaxed text-white/85"
-        >
-          Trajetória, propósito e os marcos de uma metalúrgica de base nascida em Curitiba — construída com engenharia, parque fabril próprio e equipe técnica qualificada.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-          className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8 md:mt-14 md:max-w-2xl md:pt-10"
-        >
-          {[
-            { v: "+700m²", l: "Área fabril" },
-            { v: "2022", l: "Fundação" },
-            { v: "100%", l: "Qualidade" },
-          ].map((s) => (
-            <div key={s.l}>
-              <div className="text-2xl font-extrabold tracking-tight text-white md:text-4xl">
-                {s.v}
-              </div>
-              <div className="mt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55 md:text-[11px]">
-                {s.l}
-              </div>
-            </div>
-          ))}
-        </motion.div>
-
-        <div className="mt-10 flex items-end justify-between gap-6 md:mt-16">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="hidden sm:flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/55"
-          >
-            <span>Role para conhecer nossa história</span>
-            <motion.span
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/20"
-            >
-              <ArrowDown size={12} />
-            </motion.span>
-          </motion.div>
-
-          <div className="hidden items-center gap-2 md:flex">
-            {SLIDES.map((_, i) => (
-              <button
-                key={i}
-                aria-label={`Slide ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className="group inline-flex h-6 w-6 items-center justify-center"
-              >
-                <span
-                  className={`block h-1 rounded-full transition-all duration-500 ${
-                    i === index
-                      ? "w-6 bg-white"
-                      : "w-2 bg-white/35 group-hover:bg-white/60"
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

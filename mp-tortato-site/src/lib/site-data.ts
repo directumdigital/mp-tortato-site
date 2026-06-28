@@ -155,8 +155,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Nissin Foods",
+      segmento: "Indústria Alimentícia",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -173,8 +173,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Schreiber foods",
+      segmento: "Indústria Alimentícia",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -191,8 +191,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Komastu",
+      segmento: "Mineração",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -209,8 +209,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Sumitomo Rubber do Brasil",
+      segmento: "Automotiva",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -227,8 +227,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Zaffari & Bourbon",
+      segmento: "Eletromecânica",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -245,8 +245,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Envases",
+      segmento: "Reciclagem",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -263,8 +263,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Rolkran",
+      segmento: "Eletromecânica",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -281,8 +281,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Neodent",
+      segmento: "Indústria Química",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -299,8 +299,8 @@ export const siteData = {
     },
     {
       slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
+      cliente: "Tequaly",
+      segmento: "Celulose",
       ano: "2022",
       local: "Curitiba/PR",
       escopo: ["Equipamentos", "Suportação"],
@@ -315,60 +315,7 @@ export const siteData = {
         "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
       ],
     },
-    {
-      slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
-      ano: "2022",
-      local: "Curitiba/PR",
-      escopo: ["Equipamentos", "Suportação"],
-      titulo: "Equipamentos para planta de reciclagem",
-      descricao:
-        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
-      thumb:
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
-      gallery: [
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
-      ],
-    },
-    {
-      slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
-      ano: "2022",
-      local: "Curitiba/PR",
-      escopo: ["Equipamentos", "Suportação"],
-      titulo: "Equipamentos para planta de reciclagem",
-      descricao:
-        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
-      thumb:
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
-      gallery: [
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
-      ],
-    },
-    {
-      slug: "elco",
-      cliente: "Elco Engenharia",
-      segmento: "Indústria da Reciclagem",
-      ano: "2022",
-      local: "Curitiba/PR",
-      escopo: ["Equipamentos", "Suportação"],
-      titulo: "Equipamentos para planta de reciclagem",
-      descricao:
-        "Projeto entregue dentro do escopo e do prazo, com rastreabilidade do aço e atendimento direto dos sócios.",
-      thumb:
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1400&q=80",
-      gallery: [
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1600&q=80",
-      ],
-    },
+
   ],
 };
 

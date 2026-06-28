@@ -1,19 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, MapPin, Calendar } from "lucide-react";
 import { useState } from "react";
 import { siteData, type Obra } from "@/lib/site-data";
 import ObraModal from "./ObraModal";
 
+const ALL = "Todos";
+
 export default function Obras() {
   const [active, setActive] = useState<Obra | null>(null);
+  const [filter, setFilter] = useState(ALL);
+
+  const segmentos = [ALL, ...Array.from(new Set(siteData.obras.map((o) => o.segmento)))];
+  const obrasIndexed = siteData.obras.map((o, i) => ({ ...o, _idx: i }));
+  const filtered = filter === ALL ? obrasIndexed : obrasIndexed.filter((o) => o.segmento === filter);
 
   return (
     <section
       id="obras"
-      className="relative isolate overflow-hidden bg-brand-ice py-24 md:py-32"
+      className="relative isolate overflow-hidden bg-brand-ice py-10 md:py-14"
     >
       <div
         aria-hidden
@@ -23,40 +30,35 @@ export default function Obras() {
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-ice/60 via-brand-ice/40 to-brand-ice/70"
       />
-      <div className="container-px relative">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end"
-        >
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-brand/30" />
-              <span className="mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-brand-mid">
-                Portfólio
-              </span>
-            </div>
-            <h2 className="h2-display mt-5 text-brand">
-              Clientes que escolheram nosso serviço.
-            </h2>
-          </div>
-          <p className="max-w-md text-[15px] leading-relaxed text-slate-600">
-            Trabalhos em Destaque.
-          </p>
-        </motion.div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {siteData.obras.map((obra, i) => (
+      {/* Filtros */}
+      <div className="mb-8 flex w-full flex-wrap justify-center gap-3 px-4">
+        {segmentos.map((seg) => (
+          <button
+            key={seg}
+            onClick={() => setFilter(seg)}
+            className={`rounded-full border px-6 py-2.5 text-[15px] font-semibold transition-all duration-200 ${
+              filter === seg
+                ? "border-brand bg-brand text-white shadow-md"
+                : "border-brand/20 bg-white/70 text-brand backdrop-blur hover:border-brand/60 hover:bg-white"
+            }`}
+          >
+            {seg}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 gap-3 px-4 sm:grid-cols-2 lg:grid-cols-3 lg:px-6">
+        <AnimatePresence mode="popLayout">
+          {filtered.map((obra, i) => (
             <ObraCard
-              key={obra.slug}
+              key={obra._idx}
               obra={obra}
               index={i}
               onClick={() => setActive(obra)}
             />
           ))}
-        </div>
+        </AnimatePresence>
       </div>
 
       <ObraModal obra={active} onClose={() => setActive(null)} />
@@ -77,11 +79,12 @@ function ObraCard({
     <motion.button
       type="button"
       onClick={onClick}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative block aspect-[16/9] w-full overflow-hidden rounded-2xl bg-brand text-left focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-mid"
+      layout
+      initial={{ opacity: 0, scale: 0.97 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.97 }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl bg-brand text-left focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-mid"
     >
       <Image
         src={obra.thumb}

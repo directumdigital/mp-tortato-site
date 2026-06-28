@@ -80,7 +80,7 @@ export default function Contato() {
               transition={{ duration: 0.7 }}
               className="mt-6 text-base leading-relaxed text-slate-700 md:text-[17px]"
             >
-              Atendimento direto pelo WhatsApp com a equipe MP Tortato. Preencha o formulário ou use um dos canais abaixo.
+              Atendimento direto pelo WhatsApp com o Marcos Paulo do Umbará. Preencha o formulário ou use um dos canais abaixo.
             </motion.p>
 
             <motion.div

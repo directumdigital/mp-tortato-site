@@ -23,9 +23,11 @@ export default function ObraModal({
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     closeRef.current?.focus();
+    window.dispatchEvent(new CustomEvent("obra-modal", { detail: { open: true } }));
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      window.dispatchEvent(new CustomEvent("obra-modal", { detail: { open: false } }));
     };
   }, [obra, onClose]);
 

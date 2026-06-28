@@ -23,6 +23,7 @@ export default function Navbar() {
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [obraOpen, setObraOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -36,14 +37,20 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  useEffect(() => {
+    const handler = (e: Event) => setObraOpen((e as CustomEvent).detail.open);
+    window.addEventListener("obra-modal", handler);
+    return () => window.removeEventListener("obra-modal", handler);
+  }, []);
+
   const solid = scrolled || !isHome;
 
   return (
     <>
       <motion.header
         initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        animate={{ y: obraOpen ? -80 : 0, opacity: obraOpen ? 0 : 1 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-300",
           solid

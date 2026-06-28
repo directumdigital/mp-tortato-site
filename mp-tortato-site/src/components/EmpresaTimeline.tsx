@@ -1,136 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { siteData } from "@/lib/site-data";
 
-const FRAME_COUNT = 112;
-const framePath = (i: number) =>
-  `/sequence-soldador/ezgif-frame-${String(i).padStart(3, "0")}.png`;
-
 export default function EmpresaTimeline() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imagesRef = useRef<HTMLImageElement[]>([]);
-  const lastDrawnFrame = useRef<number>(-1);
-  const [, setLoaded] = useState(0);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  const frameIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
-  const lineHeight = useTransform(scrollYProgress, [0.1, 0.85], ["0%", "100%"]);
-
-  useEffect(() => {
-    let cancelled = false;
-    const images: HTMLImageElement[] = [];
-    let count = 0;
-
-    for (let i = 1; i <= FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = framePath(i);
-      img.decoding = "async";
-      const onSettled = () => {
-        if (cancelled) return;
-        count++;
-        setLoaded(count);
-        if (i === 1) {
-          lastDrawnFrame.current = -1;
-          requestAnimationFrame(() => drawFrame(0));
-        }
-      };
-      img.onload = onSettled;
-      img.onerror = onSettled;
-      images.push(img);
-    }
-    imagesRef.current = images;
-
-    return () => {
-      cancelled = true;
-      imagesRef.current.forEach((img) => {
-        img.onload = null;
-        img.onerror = null;
-      });
-      imagesRef.current = [];
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const drawFrame = (idx: number) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    const img = imagesRef.current[idx];
-    if (!img || !img.complete || img.naturalWidth === 0) return;
-
-    const cw = canvas.width;
-    const ch = canvas.height;
-    const iw = img.naturalWidth;
-    const ih = img.naturalHeight;
-    const iAspect = iw / ih;
-    const cAspect = cw / ch;
-
-    let dw: number;
-    let dh: number;
-    let dx: number;
-    let dy: number;
-
-    if (iAspect > cAspect) {
-      dh = ch;
-      dw = ch * iAspect;
-      dx = (cw - dw) * 0.78;
-      dy = 0;
-    } else {
-      dw = cw;
-      dh = cw / iAspect;
-      dx = 0;
-      dy = (ch - dh) / 2;
-    }
-
-    ctx.clearRect(0, 0, cw, ch);
-    ctx.drawImage(img, dx, dy, dw, dh);
-    lastDrawnFrame.current = idx;
-  };
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const resize = () => {
-      const dpr = window.devicePixelRatio || 1;
-      const w = canvas.clientWidth;
-      const h = canvas.clientHeight;
-      canvas.width = Math.floor(w * dpr);
-      canvas.height = Math.floor(h * dpr);
-      const last = lastDrawnFrame.current === -1 ? 0 : lastDrawnFrame.current;
-      drawFrame(last);
-    };
-
-    resize();
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
-  }, []);
-
-  useEffect(() => {
-    const unsubscribe = frameIndex.on("change", (v) => {
-      const idx = Math.max(0, Math.min(FRAME_COUNT - 1, Math.round(v)));
-      if (idx === lastDrawnFrame.current) return;
-      drawFrame(idx);
-    });
-    return () => unsubscribe();
-  }, [frameIndex]);
-
   return (
     <>
-      {/* Mobile: static version */}
+      {/* Mobile */}
       <section className="bg-white py-20 md:hidden">
         <div className="container-px">
           <span className="eyebrow">Trajetória</span>
@@ -159,33 +36,9 @@ export default function EmpresaTimeline() {
         </div>
       </section>
 
-      {/* Desktop: scroll-jacking animation */}
-      <section
-        ref={sectionRef}
-        className="relative hidden bg-white md:block"
-        style={{ height: "400vh" }}
-      >
-      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-        <canvas ref={canvasRef} aria-hidden className="absolute inset-0 h-full w-full" />
-
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-white/60 backdrop-blur-[2px]"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-white"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0) 35%, rgba(255,255,255,0.55) 75%)",
-          }}
-        />
-
-        <div className="container-px relative z-10 flex h-full items-center">
+      {/* Desktop */}
+      <section className="hidden bg-white py-24 md:block">
+        <div className="container-px">
           <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -207,15 +60,13 @@ export default function EmpresaTimeline() {
 
             <div className="relative lg:col-span-7">
               <div className="absolute left-4 top-0 h-full w-px bg-brand/10" />
-              <motion.div
-                style={{ height: lineHeight }}
-                className="absolute left-4 top-0 w-px bg-gradient-to-b from-brand-mid via-brand to-brand"
-              />
+              <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-brand-mid via-brand to-brand" />
 
               <motion.ol
                 initial="hidden"
-                animate="show"
-                variants={{ show: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } } }}
+                whileInView="show"
+                viewport={{ once: true, margin: "-80px" }}
+                variants={{ show: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } } }}
                 className="space-y-10 md:space-y-12"
               >
                 {siteData.timeline.map((t) => (
@@ -231,7 +82,6 @@ export default function EmpresaTimeline() {
             </div>
           </div>
         </div>
-      </div>
       </section>
     </>
   );
@@ -264,7 +114,7 @@ function TimelineItem({
         )}
       </span>
 
-      <div className="group relative overflow-hidden rounded-card border border-black/[0.06] bg-white/85 p-6 shadow-soft backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-brand-mid/30 hover:shadow-[0_24px_60px_-24px_rgba(10,15,61,0.35)] md:p-7">
+      <div className="group relative overflow-hidden rounded-card border border-black/[0.06] bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-mid/30 hover:shadow-[0_24px_60px_-24px_rgba(10,15,61,0.35)] md:p-7">
         <div className="flex items-center gap-2">
           <span className="mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-mid">
             {year}
