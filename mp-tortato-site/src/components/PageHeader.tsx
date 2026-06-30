@@ -21,8 +21,8 @@ export default function PageHeader({
   breadcrumbs?: Crumb[];
   showShapeGrid?: boolean;
 }) {
-  const [isDesktop, setIsDesktop] = useState(false);
-  useEffect(() => { setIsDesktop(window.innerWidth >= 768); }, []);
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => { setIsMounted(true); }, []);
 
   const trail: Crumb[] =
     breadcrumbs && breadcrumbs.length > 0
@@ -31,7 +31,7 @@ export default function PageHeader({
 
   return (
     <section className="relative isolate overflow-hidden bg-brand text-white">
-      {showShapeGrid && isDesktop && (
+      {showShapeGrid && isMounted && (
         <div aria-hidden className="pointer-events-none absolute inset-0 opacity-50">
           <ShapeGrid
             speed={0.4}

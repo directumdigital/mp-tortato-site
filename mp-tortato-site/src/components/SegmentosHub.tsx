@@ -1,13 +1,18 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import GridPattern from "./GridPattern";
 import GalleryGrid from "./GalleryGrid";
+import SegmentosLoopBg from "./SegmentosLoopBg";
 import { segmentos } from "@/lib/site-data";
 
 export default function SegmentosHub() {
+  const sectionRef = useRef<HTMLElement>(null);
+
   return (
-    <section className="relative overflow-hidden bg-brand-ice py-24 md:py-32">
+    <section ref={sectionRef} className="relative isolate overflow-hidden bg-brand-ice py-24 md:py-32">
+      <SegmentosLoopBg sectionRef={sectionRef} />
       <GridPattern tone="light" size={56} />
 
       <div className="container-px relative">
