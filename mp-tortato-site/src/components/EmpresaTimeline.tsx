@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Sparkles, ImageIcon } from "lucide-react";
+import { Sparkles, Loader2 } from "lucide-react";
 import { siteData } from "@/lib/site-data";
+
+const TIMELINE_IMAGES = ["/empresa/historia-1.jpg", "/empresa/historia-2.jpg"];
 
 export default function EmpresaTimeline() {
   return (
@@ -13,15 +16,18 @@ export default function EmpresaTimeline() {
           <span className="eyebrow">Trajetória</span>
           <ol className="relative mt-10 space-y-6 pl-10">
             <div className="absolute left-4 top-0 h-full w-px bg-brand/10" />
-            {siteData.timeline.map((t) => (
+            {siteData.timeline.map((t, i) => (
               <li key={t.year} className="relative">
                 <span className={`absolute left-[-24px] top-2 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full border-2 ${t.future ? "border-brand bg-white" : "border-brand bg-brand"}`}>
                   {t.future && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/40" />}
                 </span>
-                <div className="overflow-hidden rounded-2xl border border-black/[0.06] bg-white p-5 shadow-soft">
-                  <span className="mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-mid">{t.year}</span>
-                  <h3 className="mt-2 text-[18px] font-extrabold leading-tight tracking-tight text-brand">{t.title}</h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-slate-700">{t.body}</p>
+                <div className="overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-soft">
+                  <TimelineImage index={i} future={t.future} />
+                  <div className="p-5">
+                    <span className="mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-mid">{t.year}</span>
+                    <h3 className="mt-2 text-[18px] font-extrabold leading-tight tracking-tight text-brand">{t.title}</h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-slate-700">{t.body}</p>
+                  </div>
                 </div>
               </li>
             ))}
@@ -90,14 +96,14 @@ export default function EmpresaTimeline() {
                         </div>
                         {/* Imagem — direita */}
                         <div className="pl-16">
-                          <ImagePlaceholder label={placeholderLabel(i)} />
+                          <TimelineImage index={i} future={item.future} />
                         </div>
                       </>
                     ) : (
                       <>
                         {/* Imagem — esquerda */}
                         <div className="pr-16">
-                          <ImagePlaceholder label={placeholderLabel(i)} />
+                          <TimelineImage index={i} future={item.future} />
                         </div>
                         {/* Texto — direita */}
                         <div className="pl-16">
@@ -129,18 +135,28 @@ export default function EmpresaTimeline() {
   );
 }
 
-function placeholderLabel(i: number) {
-  const labels = ["Foto — fundação / oficina", "Foto — parque fabril", "Render — nova sede"];
-  return labels[i] ?? "Foto";
-}
-
-function ImagePlaceholder({ label }: { label: string }) {
-  return (
-    <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50">
-      <ImageIcon size={32} className="text-slate-300" />
-      <div className="text-center">
-        <p className="text-[13px] font-medium text-slate-400">{label}</p>
+function TimelineImage({ index, future }: { index: number; future: boolean }) {
+  if (future) {
+    return (
+      <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-brand-mid/30 bg-brand-ice">
+        <Loader2 size={32} className="animate-spin text-brand-mid" />
+        <div className="text-center">
+          <p className="text-[13px] font-medium text-brand-mid">Em Breve!</p>
+        </div>
       </div>
+    );
+  }
+
+  const src = TIMELINE_IMAGES[index];
+  return (
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/[0.06] shadow-soft">
+      <Image
+        src={src}
+        alt="Trajetória MP Tortato"
+        fill
+        sizes="(min-width: 768px) 40vw, 100vw"
+        className="object-cover"
+      />
     </div>
   );
 }

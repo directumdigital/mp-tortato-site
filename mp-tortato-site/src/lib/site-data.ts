@@ -27,20 +27,20 @@ export const siteData = {
   timeline: [
     {
       year: "2022",
-      title: "Nasce a metalúrgica.",
-      body: "Pai e filho fundam a MP Tortato apostando em fabricação metálica sob medida, com foco em precisão de engenharia e prazo industrial.",
+      title: "O início de uma grande jornada.",
+      body: "A MP nasceu oficialmente em 2022, mas sua história começou muito antes. Com mais de uma década de experiência no setor metalúrgico, seus fundadores identificaram a oportunidade de criar uma empresa baseada em qualidade, compromisso e soluções sob medida para a indústria. Em um primeiro barracão de pouco mais de 120 m², a empresa deu seus primeiros passos, desenvolvendo projetos e fabricando estruturas metálicas para clientes de diferentes segmentos. Mesmo com uma estrutura enxuta, a dedicação, a experiência e a busca constante pela excelência permitiram à MP conquistar a confiança do mercado e iniciar uma trajetória de crescimento sólido e contínuo.",
       future: false,
     },
     {
-      year: "Hoje",
-      title: "+700m² de aço em produção.",
-      body: "Parque fabril em Curitiba reúne corte, dobra, solda, usinagem e pintura industrial sob o mesmo teto.",
+      year: "2023",
+      title: "Expansão e nova estrutura fabril.",
+      body: "O crescimento acelerado e a conquista de projetos cada vez mais desafiadores levaram a MP a um novo patamar. Em 2023, foi inaugurado o primeiro barracão de aproximadamente 700 m², ampliando significativamente a capacidade produtiva da empresa. A nova estrutura trouxe investimentos em máquinas, equipamentos e processos mais modernos, elevando os padrões de precisão, produtividade e qualidade. Com a implantação de novas tecnologias de fabricação, maior capacidade de movimentação e processos mais eficientes, a MP passou a atender projetos de maior porte, consolidando sua atuação no mercado de estruturas metálicas pesadas e soluções industriais de alta complexidade.",
       future: false,
     },
     {
       year: "Em breve",
-      title: "Nova sede em Fazenda Rio Grande.",
-      body: "Expansão da capacidade produtiva com engenharia, escritório, almoxarifado e área fabril ampliados.",
+      title: "O futuro — uma nova etapa de crescimento.",
+      body: "O próximo capítulo da história da MP já está sendo planejado. A empresa projeta sua expansão para Fazenda Rio Grande, em uma nova unidade com mais de 1.500 m² de área fabril e um terreno de aproximadamente 5.000 m². O investimento contemplará a aquisição de novos maquinários, tecnologias de fabricação de última geração e processos ainda mais automatizados, preparados para atender às crescentes demandas da indústria nacional. Esta nova estrutura representa o compromisso da MP com a inovação, a excelência operacional e o crescimento sustentável, fortalecendo sua capacidade de entregar soluções cada vez mais robustas para grandes projetos e clientes de diversos segmentos.",
       future: true,
     },
   ],
