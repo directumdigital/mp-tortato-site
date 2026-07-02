@@ -82,7 +82,7 @@ export default function EmpresaHero() {
           </span>
         </motion.div>
 
-        <h1 className="h1-display mt-8 max-w-5xl text-white">
+        <h1 className="h1-display mt-8 max-w-5xl text-[clamp(28px,6.2vw,80px)] text-white">
           <RevealLine text={TITLE_LINE_1} delay={0.2} muted />
           <RevealLine text={TITLE_LINE_2} delay={0.45} />
         </h1>
@@ -106,7 +106,7 @@ function RevealLine({
         initial={{ y: "110%" }}
         animate={{ y: "0%" }}
         transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
-        className={`block ${muted ? "text-white/55" : "text-white"}`}
+        className={`block whitespace-nowrap ${muted ? "text-white/55" : "text-white"}`}
       >
         {text}
       </motion.span>
