@@ -26,22 +26,42 @@ export const siteData = {
   ],
   timeline: [
     {
-      year: "2022",
-      title: "O início de uma grande jornada.",
-      body: "A MP nasceu oficialmente em 2022, mas sua história começou muito antes. Com mais de uma década de experiência no setor metalúrgico, seus fundadores identificaram a oportunidade de criar uma empresa baseada em qualidade, compromisso e soluções sob medida para a indústria. Em um primeiro barracão de pouco mais de 120 m², a empresa deu seus primeiros passos, desenvolvendo projetos e fabricando estruturas metálicas para clientes de diferentes segmentos. Mesmo com uma estrutura enxuta, a dedicação, a experiência e a busca constante pela excelência permitiram à MP conquistar a confiança do mercado e iniciar uma trajetória de crescimento sólido e contínuo.",
+      year: "Início",
+      title: "O início de tudo.",
+      body: [
+        "Nascido em Curitiba, Angelo Paulo Tortato desenvolveu desde muito jovem um grande apreço pela área de montagem e pelo ambiente industrial. Ao longo de sua trajetória profissional, passou por diversos segmentos e empreendimentos, acumulando experiências e conhecimentos que moldaram sua visão de trabalho e gestão.",
+        "Foi no setor de estruturas metálicas, entretanto, que encontrou sua verdadeira vocação. Com anos de atuação na área, construiu sua carreira exercendo diferentes funções, desde lixador e montador até encarregado de grandes projetos, adquirindo uma ampla experiência prática e um profundo conhecimento dos processos de fabricação e montagem industrial.",
+      ],
       future: false,
+      image: null,
+    },
+    {
+      year: "2022",
+      title: "O nascimento da MP Tortato.",
+      body: [
+        "Após uma trajetória marcada por dedicação, aprendizado e paixão pelo setor metalúrgico, Angelo Paulo Tortato decidiu dar um novo passo em sua história. Ao lado de seu filho, em 2022 fundou a MP Tortato, unindo experiência, valores familiares e uma visão voltada para o futuro da indústria.",
+        "Em um primeiro barracão de pouco mais de 120 m², a empresa iniciou suas atividades com o propósito de entregar soluções de qualidade, compromisso e confiança aos seus clientes. O que começou de forma simples rapidamente se transformou em uma trajetória de crescimento contínuo, impulsionada pelo trabalho, pela credibilidade e pela busca constante pela excelência em estruturas metálicas.",
+      ],
+      future: false,
+      image: "/empresa/historia-1.jpg",
     },
     {
       year: "2023",
       title: "Expansão e nova estrutura fabril.",
-      body: "O crescimento acelerado e a conquista de projetos cada vez mais desafiadores levaram a MP a um novo patamar. Em 2023, foi inaugurado o primeiro barracão de aproximadamente 700 m², ampliando significativamente a capacidade produtiva da empresa. A nova estrutura trouxe investimentos em máquinas, equipamentos e processos mais modernos, elevando os padrões de precisão, produtividade e qualidade. Com a implantação de novas tecnologias de fabricação, maior capacidade de movimentação e processos mais eficientes, a MP passou a atender projetos de maior porte, consolidando sua atuação no mercado de estruturas metálicas pesadas e soluções industriais de alta complexidade.",
+      body: [
+        "O crescimento acelerado e a conquista de projetos cada vez mais desafiadores levaram a MP a um novo patamar. Em 2023, foi inaugurado o primeiro barracão de aproximadamente 700 m², ampliando significativamente a capacidade produtiva da empresa. A nova estrutura trouxe investimentos em máquinas, equipamentos e processos mais modernos, elevando os padrões de precisão, produtividade e qualidade. Com a implantação de novas tecnologias de fabricação, maior capacidade de movimentação e processos mais eficientes, a MP passou a atender projetos de maior porte, consolidando sua atuação no mercado de estruturas metálicas pesadas e soluções industriais de alta complexidade.",
+      ],
       future: false,
+      image: "/empresa/historia-2.jpg",
     },
     {
       year: "Em breve",
       title: "O futuro — uma nova etapa de crescimento.",
-      body: "O próximo capítulo da história da MP já está sendo planejado. A empresa projeta sua expansão para Fazenda Rio Grande, em uma nova unidade com mais de 1.500 m² de área fabril e um terreno de aproximadamente 5.000 m². O investimento contemplará a aquisição de novos maquinários, tecnologias de fabricação de última geração e processos ainda mais automatizados, preparados para atender às crescentes demandas da indústria nacional. Esta nova estrutura representa o compromisso da MP com a inovação, a excelência operacional e o crescimento sustentável, fortalecendo sua capacidade de entregar soluções cada vez mais robustas para grandes projetos e clientes de diversos segmentos.",
+      body: [
+        "O próximo capítulo da história da MP já está sendo planejado. A empresa projeta sua expansão para Fazenda Rio Grande, em uma nova unidade com mais de 1.500 m² de área fabril e um terreno de aproximadamente 5.000 m². O investimento contemplará a aquisição de novos maquinários, tecnologias de fabricação de última geração e processos ainda mais automatizados, preparados para atender às crescentes demandas da indústria nacional. Esta nova estrutura representa o compromisso da MP com a inovação, a excelência operacional e o crescimento sustentável, fortalecendo sua capacidade de entregar soluções cada vez mais robustas para grandes projetos e clientes de diversos segmentos.",
+      ],
       future: true,
+      image: null,
     },
   ],
   obras: [

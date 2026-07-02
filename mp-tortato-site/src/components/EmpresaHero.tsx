@@ -5,8 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
-const TITLE_LINE_1 = "Da garagem ao aço";
-const TITLE_LINE_2 = "em escala industrial.";
+const TITLE_LINE_1 = "Tradição, experiência";
+const TITLE_LINE_2 = "e inovação.";
 
 const CDN = "https://s3.directum.com.br/mptortato";
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Sparkles, Loader2 } from "lucide-react";
 import { siteData } from "@/lib/site-data";
 
-const TIMELINE_IMAGES = ["/empresa/historia-1.jpg", "/empresa/historia-2.jpg"];
+const [introItem, ...timelineItems] = siteData.timeline;
 
 export default function EmpresaTimeline() {
   return (
@@ -14,19 +14,37 @@ export default function EmpresaTimeline() {
       <section className="bg-white py-16 md:hidden">
         <div className="container-px">
           <span className="eyebrow">Trajetória</span>
-          <ol className="relative mt-10 space-y-6 pl-10">
+
+          {/* Intro — antes da linha do tempo */}
+          <div className="mt-10 text-center">
+            <span className="mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-mid">
+              {introItem.year}
+            </span>
+            <h3 className="mt-2 text-[22px] font-extrabold leading-tight tracking-tight text-brand">
+              {introItem.title}
+            </h3>
+            {introItem.body.map((paragraph, pIdx) => (
+              <p key={pIdx} className="mt-3 text-[14px] leading-relaxed text-slate-600">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <ol className="relative mt-12 space-y-6 pl-10">
             <div className="absolute left-4 top-0 h-full w-px bg-brand/10" />
-            {siteData.timeline.map((t, i) => (
+            {timelineItems.map((t) => (
               <li key={t.year} className="relative">
                 <span className={`absolute left-[-24px] top-2 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full border-2 ${t.future ? "border-brand bg-white" : "border-brand bg-brand"}`}>
                   {t.future && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/40" />}
                 </span>
                 <div className="overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-soft">
-                  <TimelineImage index={i} future={t.future} />
+                  {(t.image || t.future) && <TimelineImage image={t.image} future={t.future} />}
                   <div className="p-5">
                     <span className="mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-mid">{t.year}</span>
                     <h3 className="mt-2 text-[18px] font-extrabold leading-tight tracking-tight text-brand">{t.title}</h3>
-                    <p className="mt-2 text-[14px] leading-relaxed text-slate-700">{t.body}</p>
+                    {t.body.map((paragraph, pIdx) => (
+                      <p key={pIdx} className="mt-2 text-[14px] leading-relaxed text-slate-700">{paragraph}</p>
+                    ))}
                   </div>
                 </div>
               </li>
@@ -43,9 +61,30 @@ export default function EmpresaTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16 text-center"
+            className="text-center"
           >
             <span className="eyebrow">Trajetória</span>
+          </motion.div>
+
+          {/* Intro — antes da linha do tempo */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto mb-16 mt-10 max-w-3xl text-center"
+          >
+            <div className="mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-mid">
+              {introItem.year}
+            </div>
+            <h3 className="mt-3 text-[28px] font-extrabold leading-tight tracking-tight text-brand lg:text-[34px]">
+              {introItem.title}
+            </h3>
+            {introItem.body.map((paragraph, pIdx) => (
+              <p key={pIdx} className="mt-4 text-[15px] leading-relaxed text-slate-600">
+                {paragraph}
+              </p>
+            ))}
           </motion.div>
 
           <div className="relative">
@@ -53,8 +92,8 @@ export default function EmpresaTimeline() {
             <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-slate-200" />
 
             <div className="space-y-0">
-              {siteData.timeline.map((item, i) => {
-                const textLeft = i % 2 === 0;
+              {timelineItems.map((item, i) => {
+                const textLeft = (i + 1) % 2 === 0;
                 return (
                   <motion.div
                     key={item.year}
@@ -90,20 +129,22 @@ export default function EmpresaTimeline() {
                           <h3 className="mt-3 text-[28px] font-extrabold leading-tight tracking-tight text-brand lg:text-[34px]">
                             {item.title}
                           </h3>
-                          <p className="mt-4 text-[15px] leading-relaxed text-slate-600">
-                            {item.body}
-                          </p>
+                          {item.body.map((paragraph, pIdx) => (
+                            <p key={pIdx} className="mt-4 text-[15px] leading-relaxed text-slate-600">
+                              {paragraph}
+                            </p>
+                          ))}
                         </div>
                         {/* Imagem — direita */}
                         <div className="pl-16">
-                          <TimelineImage index={i} future={item.future} />
+                          <TimelineImage image={item.image} future={item.future} />
                         </div>
                       </>
                     ) : (
                       <>
                         {/* Imagem — esquerda */}
                         <div className="pr-16">
-                          <TimelineImage index={i} future={item.future} />
+                          <TimelineImage image={item.image} future={item.future} />
                         </div>
                         {/* Texto — direita */}
                         <div className="pl-16">
@@ -118,9 +159,11 @@ export default function EmpresaTimeline() {
                           <h3 className="mt-3 text-[28px] font-extrabold leading-tight tracking-tight text-brand lg:text-[34px]">
                             {item.title}
                           </h3>
-                          <p className="mt-4 text-[15px] leading-relaxed text-slate-600">
-                            {item.body}
-                          </p>
+                          {item.body.map((paragraph, pIdx) => (
+                            <p key={pIdx} className="mt-4 text-[15px] leading-relaxed text-slate-600">
+                              {paragraph}
+                            </p>
+                          ))}
                         </div>
                       </>
                     )}
@@ -135,7 +178,7 @@ export default function EmpresaTimeline() {
   );
 }
 
-function TimelineImage({ index, future }: { index: number; future: boolean }) {
+function TimelineImage({ image, future }: { image: string | null; future: boolean }) {
   if (future) {
     return (
       <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-brand-mid/30 bg-brand-ice">
@@ -147,7 +190,9 @@ function TimelineImage({ index, future }: { index: number; future: boolean }) {
     );
   }
 
-  const src = TIMELINE_IMAGES[index];
+  if (!image) return null;
+
+  const src = image;
   return (
     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-black/[0.06] shadow-soft">
       <Image
